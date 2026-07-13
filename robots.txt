@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eltonelucas46-debug.github.io/FitPalsWebsite/sitemap.xml
