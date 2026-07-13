@@ -186,6 +186,11 @@ function deleteBooking(id) { if (confirm("Delete this booking?")) { db.collectio
 function updateStatus(id, status) { db.collection("bookings").doc(id).update({ status: status }); }
 function listenBookings() { db.collection("bookings").onSnapshot(() => load()); }
 function scrollToNewest() { document.querySelector(".booking-card").scrollIntoView({ behavior: "smooth" }); }
+    
+if ("serviceWorker" in navigator) {
+navigator.serviceWorker.register("/FitPalsWebsite/service-worker.js")
+.then(() => console.log("Service Worker Registered"));
+}
 </script>
 </body>
 </html>
