@@ -1422,7 +1422,24 @@ navigator.serviceWorker.register("/FitPalsWebsite/service-worker.js")
 .then(() => console.log("Service Worker Registered"));
 }
 
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e)=>{
+e.preventDefault();
+deferredPrompt=e;
+
+document.getElementById("installBtn").style.display="block";
+});
+
+
+document.getElementById("installBtn").onclick=()=>{
+deferredPrompt.prompt();
+};
+
 </script>
+  <button id="installBtn" style="display:none;">
+Install FitPals App
+  </button>
   </body>
   </html>
 
