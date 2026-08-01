@@ -1,21 +1,25 @@
 {
-  "name": "FitPals Fitness Training",
+  "id": "/FitPalsWebsite/",
+  "name": "FitPals™ Fitness Training",
   "short_name": "FitPals",
   "start_url": "/FitPalsWebsite/",
+  "scope": "/FitPalsWebsite/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
-  "description": "Personal fitness training and workout guidance.",
+  "description": "FitPals™ helps you achieve your fitness goals through personalized workout programs, training guidance, and a supportive fitness community.",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/FitPalsWebsite/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "/FitPalsWebsite/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
