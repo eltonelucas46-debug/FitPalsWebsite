@@ -2,23 +2,11 @@
 <html lang="en">
 
 <head>
-  <link rel="manifest" href="manifest.json">
-
-<meta name="theme-color" content="#000000">
-  <meta name="google-site-verification" content="Ee_76wioRtp06YG4FrQAIIYK_PoSAwzPflHvfHZVXAs" />
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>FitPals | Personal Fitness Training</title>
-
-<meta name="description" content="FitPals offers personalized fitness training, workout plans, nutrition guidance, and healthy lifestyle coaching.">
-
-<meta name="keywords" content="fitness, personal trainer, home workouts, gym, FitPals, exercise">
-
-<meta name="author" content="Eltone Lucas">
-
-<meta name="robots" content="index, follow">
 
 <meta name="description" content="Professional Personal Fitness Training by Philip">
 
@@ -700,21 +688,17 @@ font-size:16px;
 </div>
 
 <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About FitPals</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="booking.html">Booking</a>
+    <a href="feeds.html">Feeds</a>
+    <a href="account.html">Account</a>
+    <a href="contact.html">Contact</a>
 
-<a href="index.html">Home</a>
-
-<a href="about.html">About FitPals</a>
-
-<a href="merchandise.html">Merchandise</a>
-
-<a href="booking.html">Booking</a>
-
-<a href="contact.html">Contact</a>
-
-<a href="admin.html" style="color:#2196f3;font-weight:bold;">
-<i class="fas fa-user-shield"></i> Admin Dashboard
-</a>
-
+    <a href="admin.html" style="color:#2196f3;font-weight:bold;">
+        <i class="fas fa-user-shield"></i> Admin Dashboard
+    </a>
 </nav>
 
 
@@ -751,6 +735,8 @@ Book Session
 <a href="booking.html">Booking</a>
 
 <a href="contact.html">Contact</a>
+  <a href="feeds.html">Feeds</a>
+<a href="account.html">Account</a>
   <a href="admin.html" style="color:#2196f3;font-weight:bold;">
 <i class="fas fa-user-shield"></i> Admin Dashboard
   </a>
@@ -1066,6 +1052,10 @@ Learn More About Me
 <img src="gallery3.jpg">
 
 <img src="gallery4.jpg">
+
+<img src="gallery5.jpg">
+
+<img src="gallery6.jpg">
 
 </div>
 
@@ -1416,30 +1406,7 @@ gallery.forEach(img=>{
     });
 
 });
-  
-if ("serviceWorker" in navigator) {
-navigator.serviceWorker.register("/FitPalsWebsite/service-worker.js")
-.then(() => console.log("Service Worker Registered"));
-}
-
-let deferredPrompt;
-
-window.addEventListener("beforeinstallprompt", (e)=>{
-e.preventDefault();
-deferredPrompt=e;
-
-document.getElementById("installBtn").style.display="block";
-});
-
-
-document.getElementById("installBtn").onclick=()=>{
-deferredPrompt.prompt();
-};
-
 </script>
-  <button id="installBtn" style="display:none;">
-Install FitPals App
-  </button>
   </body>
   </html>
 

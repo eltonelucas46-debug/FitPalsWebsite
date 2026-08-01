@@ -456,20 +456,17 @@ Fit<span>Pals™</span>
 </div>
 
 <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About FitPals</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="booking.html">Booking</a>
+    <a href="feeds.html">Feeds</a>
+    <a href="account.html">Account</a>
+    <a href="contact.html">Contact</a>
 
-<a href="index.html">Home</a>
-
-<a href="about.html">About FitPals</a>
-
-<a href="merchandise.html">Merchandise</a>
-
-<a href="booking.html">Booking</a>
-
-<a href="contact.html"
-style="color:#2196f3;font-weight:bold;">
-Contact
-</a>
-
+    <a href="admin.html" style="color:#2196f3;font-weight:bold;">
+        <i class="fas fa-user-shield"></i> Admin Dashboard
+    </a>
 </nav>
 
 <a href="booking.html"
@@ -510,6 +507,8 @@ onclick="closeMenu()">
 <a href="booking.html">Booking</a>
 
 <a href="contact.html">Contact</a>
+  <a href="feeds.html">Feeds</a>
+<a href="account.html">Account</a>
 
 </div>
 
@@ -917,12 +916,6 @@ form.addEventListener("submit", function(e){
     form.reset();
 
 });
-
-if ("serviceWorker" in navigator) {
-navigator.serviceWorker.register("/FitPalsWebsite/service-worker.js")
-.then(() => console.log("Service Worker Registered"));
-}
-
 
 </script>
 

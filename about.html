@@ -728,21 +728,17 @@ nav{
 </div>
 
 <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About FitPals</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="booking.html">Booking</a>
+    <a href="feeds.html">Feeds</a>
+    <a href="account.html">Account</a>
+    <a href="contact.html">Contact</a>
 
-<a href="index.html">Home</a>
-
-<a href="about.html">About FitPals</a>
-
-<a href="merchandise.html">Merchandise</a>
-
-<a href="booking.html">Booking</a>
-
-<a href="contact.html">Contact</a>
-
-<a href="admin.html" style="color:#2196f3;font-weight:bold;">
-<i class="fas fa-user-shield"></i> Admin Dashboard
-</a>
-
+    <a href="admin.html" style="color:#2196f3;font-weight:bold;">
+        <i class="fas fa-user-shield"></i> Admin Dashboard
+    </a>
 </nav>
 
 <a href="booking.html" class="book-btn">
@@ -773,6 +769,8 @@ Book Session
 <a href="booking.html">Booking</a>
 
 <a href="contact.html">Contact</a>
+  <a href="feeds.html">Feeds</a>
+<a href="account.html">Account</a>
 
 <a href="admin.html" style="color:#2196f3;font-weight:bold;">
 <i class="fas fa-user-shield"></i> Admin Dashboard
@@ -1798,11 +1796,6 @@ item.querySelector(".faq-question").addEventListener("click",()=>{
 item.classList.toggle("active");
 });
 });
-  
-if ("serviceWorker" in navigator) {
-navigator.serviceWorker.register("/FitPalsWebsite/service-worker.js")
-.then(() => console.log("Service Worker Registered"));
-}
 </script>
 </body>
 </html>
