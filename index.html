@@ -676,6 +676,42 @@ font-size:16px;
 
 </style>
 
+<link rel="manifest" href="manifest.json">
+
+<style>
+.get-app-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid #2196f3;
+    background: #2196f3;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.get-app-btn:hover {
+    background: #1976d2;
+    box-shadow: 0 0 20px #2196f3;
+}
+
+.get-app-btn:active {
+    transform: scale(.96);
+}
+
+@media (max-width: 850px) {
+    .get-app-btn {
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -707,6 +743,9 @@ font-size:16px;
 Book Session
 
 </a>
+<button id="getAppBtn" class="get-app-btn" type="button">
+&#128241; Get App
+</button>
 
 <div class="menu" onclick="openMenu()">
 
@@ -1407,7 +1446,113 @@ gallery.forEach(img=>{
 
 });
 </script>
-  </body>
+  
+<script>
+/* FITPALS SERVICE WORKER */
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register(
+            "/FitPalsWebsite/service-worker.js"
+        ).then(() => {
+            console.log("FitPals service worker registered.");
+        }).catch(error => {
+            console.error(
+                "FitPals service worker registration failed:",
+                error
+            );
+        });
+    });
+}
+</script>
+
+
+<script>
+/* FITPALS PWA INSTALL */
+
+let fitPalsInstallPrompt = null;
+
+const getAppBtn =
+    document.getElementById("getAppBtn");
+
+function fitPalsAlreadyInstalled() {
+    return (
+        window.matchMedia(
+            "(display-mode: standalone)"
+        ).matches ||
+        window.navigator.standalone === true
+    );
+}
+
+window.addEventListener(
+    "beforeinstallprompt",
+    event => {
+
+        event.preventDefault();
+
+        fitPalsInstallPrompt = event;
+
+        if (
+            getAppBtn &&
+            !fitPalsAlreadyInstalled()
+        ) {
+            getAppBtn.style.display =
+                "inline-flex";
+        }
+    }
+);
+
+if (getAppBtn) {
+
+    getAppBtn.addEventListener(
+        "click",
+        async () => {
+
+            if (!fitPalsInstallPrompt) {
+
+                alert(
+                    "FitPals is not currently ready for installation. " +
+                    "Please use Chrome and try again."
+                );
+
+                return;
+            }
+
+            fitPalsInstallPrompt.prompt();
+
+            const choice =
+                await fitPalsInstallPrompt.userChoice;
+
+            if (choice.outcome === "accepted") {
+                getAppBtn.style.display = "none";
+            }
+
+            fitPalsInstallPrompt = null;
+        }
+    );
+}
+
+window.addEventListener(
+    "appinstalled",
+    () => {
+
+        if (getAppBtn) {
+            getAppBtn.style.display = "none";
+        }
+
+        fitPalsInstallPrompt = null;
+    }
+);
+
+if (fitPalsAlreadyInstalled()) {
+
+    if (getAppBtn) {
+        getAppBtn.style.display = "none";
+    }
+}
+</script>
+
+</body>
   </html>
 
 
