@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "970079191247",
+    "firebase_url": "https://fitpals-booking-system-9e029-default-rtdb.firebaseio.com",
+    "project_id": "fitpals-booking-system-9e029",
+    "storage_bucket": "fitpals-booking-system-9e029.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970079191247:android:6e80eb97de34bce8e5b7ba",
+        "android_client_info": {
+          "package_name": "com.fitpals.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970079191247-is6ai79dimkt5ud3kghf514qdbsce2k6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEwYiBxsiVoomiXNZZQHmw6LO5mSTaCrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970079191247-is6ai79dimkt5ud3kghf514qdbsce2k6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
