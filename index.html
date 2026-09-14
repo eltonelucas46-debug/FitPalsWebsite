@@ -676,6 +676,8 @@ font-size:16px;
 
 </style>
 
+    <link rel="manifest" href="/FitPalsWebsite/manifest.json">
+    <meta name="theme-color" content="#2196f3">
 </head>
 
 <body>
@@ -1407,7 +1409,21 @@ gallery.forEach(img=>{
 
 });
 </script>
-  </body>
+      <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/FitPalsWebsite/service-worker.js", {
+            scope: "/FitPalsWebsite/"
+          }).then(function (registration) {
+            console.log("FitPals Service Worker registered:", registration.scope);
+          }).catch(function (error) {
+            console.error("FitPals Service Worker registration failed:", error);
+          });
+        });
+      }
+    </script>
+    <script src="/FitPalsWebsite/install.js"></script>
+</body>
   </html>
 
 
