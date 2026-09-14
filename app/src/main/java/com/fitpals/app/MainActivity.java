@@ -148,145 +148,455 @@ public class MainActivity extends Activity {
 
     private void showFitnessSplash() {
 
+        final int BLUE = Color.rgb(33, 150, 243);
+        final int DARK = Color.rgb(18, 25, 35);
+        final int WHITE = Color.WHITE;
+
         FrameLayout splash = new FrameLayout(this);
-        splash.setBackgroundColor(Color.WHITE);
+        splash.setBackgroundColor(DARK);
+
+        // ============================================================
+        // MAIN CONTENT
+        // ============================================================
 
         LinearLayout content = new LinearLayout(this);
         content.setOrientation(LinearLayout.VERTICAL);
         content.setGravity(Gravity.CENTER);
-        content.setPadding(dp(24), dp(24), dp(24), dp(24));
+        content.setPadding(dp(20), dp(20), dp(20), dp(20));
 
         FrameLayout.LayoutParams contentParams =
                 new FrameLayout.LayoutParams(
                         FrameLayout.LayoutParams.MATCH_PARENT,
                         FrameLayout.LayoutParams.MATCH_PARENT
                 );
+
         splash.addView(content, contentParams);
 
-        // FitPals logo
+        // ============================================================
+        // TOP BRANDING
+        // ============================================================
+
+        TextView brandTop = new TextView(this);
+        brandTop.setText("FITPALS™");
+        brandTop.setTextSize(13);
+        brandTop.setTextColor(Color.LTGRAY);
+        brandTop.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+        brandTop.setGravity(Gravity.CENTER);
+        brandTop.setLetterSpacing(0.28f);
+        brandTop.setAlpha(0f);
+
+        content.addView(
+                brandTop,
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+        );
+
+        // ============================================================
+        // LOGO
+        // ============================================================
+
         ImageView logo = new ImageView(this);
         logo.setImageResource(R.drawable.logo);
         logo.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         logo.setAlpha(0f);
-        logo.setScaleX(0.65f);
-        logo.setScaleY(0.65f);
+        logo.setScaleX(0.55f);
+        logo.setScaleY(0.55f);
 
         LinearLayout.LayoutParams logoParams =
-                new LinearLayout.LayoutParams(dp(155), dp(155));
-        logoParams.bottomMargin = dp(12);
+                new LinearLayout.LayoutParams(dp(145), dp(145));
+
+        logoParams.topMargin = dp(8);
+        logoParams.bottomMargin = dp(4);
+
         content.addView(logo, logoParams);
 
-        // "FitPals" letter-by-letter writing effect
-        LinearLayout letters = new LinearLayout(this);
-        letters.setOrientation(LinearLayout.HORIZONTAL);
-        letters.setGravity(Gravity.CENTER);
+        // ============================================================
+        // FITPALS TITLE
+        // ============================================================
 
-        String title = "FitPals";
+        TextView title = new TextView(this);
+        title.setText("FitPals");
+        title.setTextSize(36);
+        title.setTextColor(BLUE);
+        title.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+        title.setGravity(Gravity.CENTER);
+        title.setAlpha(0f);
+        title.setScaleX(0.85f);
+        title.setScaleY(0.85f);
 
-        TextView[] letterViews = new TextView[title.length()];
+        content.addView(
+                title,
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+        );
 
-        for (int i = 0; i < title.length(); i++) {
-            TextView letter = new TextView(this);
-            letter.setText(String.valueOf(title.charAt(i)));
-            letter.setTextSize(34);
-            letter.setTextColor(Color.rgb(33, 150, 243));
-            letter.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
-            letter.setGravity(Gravity.CENTER);
-            letter.setAlpha(0f);
-            letter.setTranslationY(dp(18));
+        // ============================================================
+        // FITNESS SCENE
+        // ============================================================
 
-            letters.addView(letter,
-                    new LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.WRAP_CONTENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT
-                    ));
+        LinearLayout scene = new LinearLayout(this);
+        scene.setOrientation(LinearLayout.HORIZONTAL);
+        scene.setGravity(Gravity.CENTER);
+        scene.setAlpha(0f);
 
-            letterViews[i] = letter;
-        }
+        LinearLayout.LayoutParams sceneParams =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        dp(125)
+                );
 
-        content.addView(letters);
+        sceneParams.topMargin = dp(14);
+        sceneParams.bottomMargin = dp(8);
 
-        // Slogan
-        TextView slogan = new TextView(this);
-        slogan.setText("TRAIN • MOVE • GROW");
-        slogan.setTextSize(12);
-        slogan.setTextColor(Color.DKGRAY);
-        slogan.setGravity(Gravity.CENTER);
-        slogan.setLetterSpacing(0.18f);
-        slogan.setAlpha(0f);
-        slogan.setTranslationY(dp(10));
+        content.addView(scene, sceneParams);
 
-        LinearLayout.LayoutParams sloganParams =
+        // Gym structure
+        LinearLayout gym = new LinearLayout(this);
+        gym.setOrientation(LinearLayout.VERTICAL);
+        gym.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
+
+        LinearLayout.LayoutParams gymParams =
+                new LinearLayout.LayoutParams(dp(70), dp(105));
+
+        gymParams.rightMargin = dp(8);
+
+        scene.addView(gym, gymParams);
+
+        TextView gymTop = new TextView(this);
+        gymTop.setText("GYM");
+        gymTop.setTextSize(14);
+        gymTop.setTextColor(WHITE);
+        gymTop.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+        gymTop.setGravity(Gravity.CENTER);
+
+        android.graphics.drawable.GradientDrawable gymBox =
+                new android.graphics.drawable.GradientDrawable();
+
+        gymBox.setColor(Color.rgb(35, 45, 58));
+        gymBox.setCornerRadius(dp(8));
+
+        gymTop.setBackground(gymBox);
+
+        gym.addView(
+                gymTop,
+                new LinearLayout.LayoutParams(
+                        dp(64),
+                        dp(34)
+                )
+        );
+
+        // Gym pillars
+        LinearLayout gymPillars = new LinearLayout(this);
+        gymPillars.setOrientation(LinearLayout.HORIZONTAL);
+        gymPillars.setGravity(Gravity.CENTER);
+
+        TextView pillar1 = new TextView(this);
+        TextView pillar2 = new TextView(this);
+
+        pillar1.setBackgroundColor(BLUE);
+        pillar2.setBackgroundColor(BLUE);
+
+        gymPillars.addView(
+                pillar1,
+                new LinearLayout.LayoutParams(dp(5), dp(55))
+        );
+
+        LinearLayout.LayoutParams pillarGap =
+                new LinearLayout.LayoutParams(dp(5), dp(55));
+
+        pillarGap.leftMargin = dp(38);
+
+        gymPillars.addView(pillar2, pillarGap);
+
+        gym.addView(gymPillars);
+
+        // Dumbbell
+        ImageView dumbbell = new ImageView(this);
+        dumbbell.setImageResource(R.drawable.ic_dumbbell);
+        dumbbell.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        dumbbell.setAlpha(0f);
+        dumbbell.setScaleX(0.8f);
+        dumbbell.setScaleY(0.8f);
+
+        LinearLayout.LayoutParams dumbbellParams =
+                new LinearLayout.LayoutParams(dp(90), dp(90));
+
+        dumbbellParams.leftMargin = dp(4);
+        dumbbellParams.rightMargin = dp(4);
+
+        scene.addView(dumbbell, dumbbellParams);
+
+        // Running athlete
+        TextView runner = new TextView(this);
+        runner.setText("🏃");
+        runner.setTextSize(48);
+        runner.setGravity(Gravity.CENTER);
+        runner.setAlpha(0f);
+        runner.setTranslationX(dp(-30));
+
+        LinearLayout.LayoutParams runnerParams =
+                new LinearLayout.LayoutParams(dp(85), dp(90));
+
+        runnerParams.leftMargin = dp(4);
+
+        scene.addView(runner, runnerParams);
+
+        // ============================================================
+        // MOTIVATIONAL TEXT
+        // ============================================================
+
+        TextView message = new TextView(this);
+        message.setText("TRAIN • MOVE • GROW");
+        message.setTextSize(13);
+        message.setTextColor(Color.LTGRAY);
+        message.setGravity(Gravity.CENTER);
+        message.setLetterSpacing(0.18f);
+        message.setAlpha(0f);
+
+        LinearLayout.LayoutParams messageParams =
                 new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 );
-        sloganParams.topMargin = dp(8);
-        content.addView(slogan, sloganParams);
 
-        // Small animated loading line
-        View loadingLine = new View(this);
-        loadingLine.setBackgroundColor(Color.rgb(33, 150, 243));
-        loadingLine.setScaleX(0f);
-        loadingLine.setAlpha(0f);
+        messageParams.topMargin = dp(5);
 
-        LinearLayout.LayoutParams lineParams =
-                new LinearLayout.LayoutParams(dp(110), dp(3));
-        lineParams.topMargin = dp(24);
-        content.addView(loadingLine, lineParams);
+        content.addView(message, messageParams);
+
+        TextView status = new TextView(this);
+        status.setText("Preparing your fitness experience...");
+        status.setTextSize(11);
+        status.setTextColor(Color.GRAY);
+        status.setGravity(Gravity.CENTER);
+        status.setAlpha(0f);
+
+        LinearLayout.LayoutParams statusParams =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+        statusParams.topMargin = dp(10);
+
+        content.addView(status, statusParams);
+
+        // ============================================================
+        // PROGRESS BAR
+        // ============================================================
+
+        android.widget.ProgressBar progress =
+                new android.widget.ProgressBar(
+                        this,
+                        null,
+                        android.R.attr.progressBarStyleHorizontal
+                );
+
+        progress.setMax(100);
+        progress.setProgress(0);
+        progress.setAlpha(0f);
+
+        LinearLayout.LayoutParams progressParams =
+                new LinearLayout.LayoutParams(
+                        dp(230),
+                        dp(5)
+                );
+
+        progressParams.topMargin = dp(16);
+
+        content.addView(progress, progressParams);
+
+        // ============================================================
+        // PERCENTAGE
+        // ============================================================
+
+        TextView percentage = new TextView(this);
+        percentage.setText("0%");
+        percentage.setTextSize(11);
+        percentage.setTextColor(Color.GRAY);
+        percentage.setGravity(Gravity.CENTER);
+        percentage.setAlpha(0f);
+
+        LinearLayout.LayoutParams percentageParams =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+        percentageParams.topMargin = dp(5);
+
+        content.addView(percentage, percentageParams);
+
+        // ============================================================
+        // SET SPLASH SCREEN
+        // ============================================================
 
         setContentView(splash);
 
-        // Logo entrance
+        // ============================================================
+        // BRAND / LOGO ANIMATION
+        // ============================================================
+
+        brandTop.animate()
+                .alpha(1f)
+                .setDuration(500)
+                .start();
+
         logo.animate()
                 .alpha(1f)
                 .scaleX(1f)
                 .scaleY(1f)
-                .setDuration(650)
-                .setInterpolator(new android.view.animation.OvershootInterpolator())
+                .setStartDelay(250)
+                .setDuration(850)
+                .setInterpolator(
+                        new android.view.animation.OvershootInterpolator()
+                )
                 .start();
 
-        // Write FitPals one letter at a time
-        for (int i = 0; i < letterViews.length; i++) {
-
-            final TextView letter = letterViews[i];
-
-            letter.animate()
-                    .alpha(1f)
-                    .translationY(0f)
-                    .setStartDelay(450 + (i * 90L))
-                    .setDuration(280)
-                    .setInterpolator(new android.view.animation.DecelerateInterpolator())
-                    .start();
-        }
-
-        // Slogan
-        slogan.animate()
+        title.animate()
                 .alpha(1f)
-                .translationY(0f)
-                .setStartDelay(1050)
+                .scaleX(1f)
+                .scaleY(1f)
+                .setStartDelay(800)
+                .setDuration(650)
+                .setInterpolator(
+                        new android.view.animation.DecelerateInterpolator()
+                )
+                .start();
+
+        // ============================================================
+        // FITNESS SCENE ANIMATION
+        // ============================================================
+
+        scene.animate()
+                .alpha(1f)
+                .setStartDelay(1800)
+                .setDuration(700)
+                .start();
+
+        dumbbell.animate()
+                .alpha(1f)
+                .setStartDelay(2300)
+                .setDuration(450)
+                .start();
+
+        android.animation.ObjectAnimator dumbbellBounce =
+                android.animation.ObjectAnimator.ofFloat(
+                        dumbbell,
+                        "translationY",
+                        dp(8),
+                        dp(-8)
+                );
+
+        dumbbellBounce.setDuration(650);
+        dumbbellBounce.setRepeatMode(
+                android.animation.ValueAnimator.REVERSE
+        );
+        dumbbellBounce.setRepeatCount(
+                android.animation.ValueAnimator.INFINITE
+        );
+        dumbbellBounce.setStartDelay(2800);
+        dumbbellBounce.start();
+
+        runner.animate()
+                .alpha(1f)
+                .translationX(0f)
+                .setStartDelay(6500)
+                .setDuration(900)
+                .start();
+
+        android.animation.ObjectAnimator runnerMove =
+                android.animation.ObjectAnimator.ofFloat(
+                        runner,
+                        "translationX",
+                        dp(-8),
+                        dp(8)
+                );
+
+        runnerMove.setDuration(500);
+        runnerMove.setRepeatMode(
+                android.animation.ValueAnimator.REVERSE
+        );
+        runnerMove.setRepeatCount(8);
+        runnerMove.setStartDelay(7400);
+        runnerMove.start();
+
+        // ============================================================
+        // TEXT ANIMATION
+        // ============================================================
+
+        message.animate()
+                .alpha(1f)
+                .setStartDelay(5000)
+                .setDuration(700)
+                .start();
+
+        status.animate()
+                .alpha(1f)
+                .setStartDelay(8000)
+                .setDuration(600)
+                .start();
+
+        progress.animate()
+                .alpha(1f)
+                .setStartDelay(1800)
                 .setDuration(500)
                 .start();
 
-        // Loading line
-        loadingLine.animate()
+        percentage.animate()
                 .alpha(1f)
-                .scaleX(1f)
-                .setStartDelay(1150)
-                .setDuration(550)
-                .setInterpolator(new android.view.animation.DecelerateInterpolator())
+                .setStartDelay(1800)
+                .setDuration(500)
                 .start();
 
-        // Open the FitPals website
+        // ============================================================
+        // 20-SECOND PROGRESS ANIMATION
+        // ============================================================
+
+        android.animation.ValueAnimator progressAnimator =
+                android.animation.ValueAnimator.ofInt(0, 100);
+
+        progressAnimator.setDuration(19000);
+        progressAnimator.setStartDelay(1000);
+
+        progressAnimator.addUpdateListener(animation -> {
+
+            int value = (Integer) animation.getAnimatedValue();
+
+            progress.setProgress(value);
+            percentage.setText(value + "%");
+
+            if (value < 25) {
+                status.setText("Preparing your fitness experience...");
+            } else if (value < 50) {
+                status.setText("Building your training environment...");
+            } else if (value < 75) {
+                status.setText("Getting you ready to move...");
+            } else if (value < 95) {
+                status.setText("Almost ready...");
+            } else {
+                status.setText("Welcome to FitPals!");
+            }
+        });
+
+        progressAnimator.start();
+
+        // ============================================================
+        // FINISH SPLASH AFTER APPROXIMATELY 20 SECONDS
+        // ============================================================
+
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
 
             splash.animate()
                     .alpha(0f)
-                    .setDuration(350)
+                    .setDuration(500)
                     .withEndAction(this::createWebView)
                     .start();
 
-        }, 1900);
+        }, 20000);
     }
 
     private int dp(int value) {
