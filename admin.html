@@ -17,7 +17,26 @@
         input { width:100%; padding:12px; margin:10px 0; background:#1a1a1a; border:none; border-radius:8px; color:white; }
         button { width:100%; padding:12px; background:#2196f3; border:none; border-radius:8px; font-weight:bold; cursor:pointer; }
         .dashboard { display:none; }
-        header { padding:20px; text-align:center; background:#111; border-bottom:2px solid #2196f3; position:sticky; top:0; }
+        header {
+            padding:20px;
+            text-align:center;
+            background:#111;
+            border-bottom:2px solid #2196f3;
+            position:sticky;
+            top:0;
+        }
+
+        header .logo-img {
+            width:180px;
+            height:auto;
+            display:block;
+            margin:0 auto 15px;
+            border:0;
+            border-radius:16px;
+            object-fit:contain;
+            overflow:hidden;
+            -webkit-mask-image:-webkit-radial-gradient(white,black);
+        }
         h1 { color:#2196f3; margin:0; }
         .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:15px; padding:20px; }
         .card { background:#111; padding:20px; border-radius:12px; text-align:center; border:1px solid #222; }
@@ -57,6 +76,7 @@
 
 <div class="dashboard" id="dashboard">
     <header>
+        <img src="new-logo.jpg" class="logo-img" alt="FitPals™">
         <h1>FitPals Dashboard</h1>
         <button class="refresh-btn" onclick="load()">Manual Refresh</button>
     </header>

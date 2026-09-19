@@ -144,12 +144,14 @@ color:#fff;
 }
 
 .logo img{
-width:46px;
-height:46px;
-border-radius:50%;
-margin-right:10px;
-border:2px solid #2196f3;
-object-fit:cover;
+width:180px;
+height:auto;
+display:block;
+border:0;
+border-radius:16px;
+object-fit:contain;
+overflow:hidden;
+-webkit-mask-image:-webkit-radial-gradient(white,black);
 }
 
 nav{
@@ -434,9 +436,7 @@ padding:25px;
 
 <div class="logo">
 
-<img src="logo.jpg" alt="FitPals Logo">
-
-Fit<span>Pals™</span>
+<img src="new-logo.jpg" class="logo-img" alt="FitPals™">
 
 </div>
 

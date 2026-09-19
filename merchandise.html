@@ -23,7 +23,21 @@
         body { background: #0b0b0b; color: #fff; line-height: 1.6; }
 
         header { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(17, 17, 17, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #222; z-index: 1000; }
-        .logo { font-size: 24px; font-weight: 700; color: #2196f3; }
+        .logo {
+            display:flex;
+            align-items:center;
+        }
+
+        .logo-img {
+            width:180px;
+            height:auto;
+            display:block;
+            border:0;
+            border-radius:16px;
+            object-fit:contain;
+            overflow:hidden;
+            -webkit-mask-image:-webkit-radial-gradient(white,black);
+        }
         .cart-btn { background: #2196f3; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; color: #fff; font-weight: 600; transition: 0.3s; }
         .cart-btn:hover { background: #1976d2; }
 
@@ -51,7 +65,9 @@
 <body>
 
 <header>
-    <div class="logo">FitPals<span> Store</span></div>
+    <div class="logo">
+        <img src="new-logo.jpg" class="logo-img" alt="FitPals™">
+    </div>
     <button class="cart-btn" onclick="toggleCart()">Cart (<span id="count">0</span>)</button>
 </header>
 
