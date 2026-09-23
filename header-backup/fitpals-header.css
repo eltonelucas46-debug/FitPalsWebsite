@@ -1,0 +1,136 @@
+/* =========================================
+   FITPALS SHARED HEADER
+   ========================================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:14px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    z-index:1000;
+}
+
+/* FitPals Logo */
+header .logo{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+    font-size:0;
+}
+
+header .logo-img{
+    width:180px !important;
+    height:auto !important;
+    max-height:75px;
+    display:block;
+    object-fit:contain;
+    border:0;
+    border-radius:16px;
+}
+
+/* Desktop Navigation */
+header nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+header nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s ease;
+}
+
+header nav a:hover{
+    color:#2196f3;
+}
+
+/* Book button */
+header .book-btn{
+    padding:11px 22px;
+    background:#2196f3;
+    color:#000;
+    font-weight:700;
+    border-radius:50px;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+/* Hamburger Menu */
+header .menu{
+    display:none;
+    width:52px;
+    height:52px;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    color:#fff !important;
+    background:transparent !important;
+    border:0 !important;
+    padding:0 !important;
+    font-size:36px !important;
+    line-height:1;
+    z-index:1100;
+}
+
+header .menu i{
+    color:#fff !important;
+    font-size:36px;
+}
+
+/* Mobile Header */
+@media(max-width:900px){
+
+    header{
+        padding:10px 6%;
+        min-height:78px;
+    }
+
+    header .logo-img{
+        width:175px !important;
+        max-height:68px;
+    }
+
+    header nav,
+    header .book-btn{
+        display:none !important;
+    }
+
+    header .menu{
+        display:flex !important;
+    }
+
+}
+
+/* Smaller phones */
+@media(max-width:480px){
+
+    header{
+        padding:8px 5%;
+        min-height:72px;
+    }
+
+    header .logo-img{
+        width:155px !important;
+        max-height:62px;
+    }
+
+    header .menu,
+    header .menu i{
+        font-size:34px !important;
+    }
+
+    header .menu{
+        width:48px;
+        height:48px;
+    }
+
+}
