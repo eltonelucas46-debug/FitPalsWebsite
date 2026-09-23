@@ -1,5 +1,6 @@
 /* =========================================
    FITPALS SHARED HEADER
+   Modern Responsive Header v2
    ========================================= */
 
 header{
@@ -7,45 +8,72 @@ header{
     top:0;
     left:0;
     width:100%;
-    padding:14px 7%;
+    min-height:78px;
+    padding:10px 5%;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    background:rgba(0,0,0,.82);
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
+    gap:22px;
+    background:rgba(5,5,8,.88);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(33,150,243,.15);
+    box-shadow:0 4px 25px rgba(0,0,0,.25);
     z-index:1000;
 }
 
-/* FitPals Logo */
+/* =========================================
+   LOGO
+   ========================================= */
+
 header .logo{
     display:flex;
     align-items:center;
     flex-shrink:0;
     font-size:0;
+    margin-right:auto;
 }
 
 header .logo-img{
-    width:180px !important;
+    width:165px !important;
     height:auto !important;
-    max-height:75px;
+    max-height:68px;
     display:block;
     object-fit:contain;
     border:0;
-    border-radius:16px;
+    border-radius:14px;
 }
 
-/* Desktop Navigation */
+/* =========================================
+   DESKTOP NAVIGATION
+   ========================================= */
+
 header nav{
     display:flex;
     align-items:center;
-    gap:25px;
+    justify-content:center;
+    gap:20px;
+    white-space:nowrap;
 }
 
 header nav a{
+    position:relative;
     color:#fff;
     text-decoration:none;
-    font-size:15px;
+    font-size:14px;
+    font-weight:500;
+    padding:8px 0;
+    transition:.3s ease;
+}
+
+header nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:2px;
+    background:#2196f3;
+    border-radius:10px;
     transition:.3s ease;
 }
 
@@ -53,84 +81,222 @@ header nav a:hover{
     color:#2196f3;
 }
 
-/* Book button */
+header nav a:hover::after{
+    width:100%;
+}
+
+/* =========================================
+   ADMIN DASHBOARD
+   ========================================= */
+
+header nav a[style*="user-shield"]{
+    color:#2196f3 !important;
+    font-weight:700 !important;
+}
+
+/* =========================================
+   BOOK SESSION BUTTON
+   ========================================= */
+
 header .book-btn{
-    padding:11px 22px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:11px 19px;
     background:#2196f3;
-    color:#000;
+    color:#000 !important;
+    font-size:14px;
     font-weight:700;
     border-radius:50px;
     text-decoration:none;
     white-space:nowrap;
+    box-shadow:0 0 18px rgba(33,150,243,.25);
+    transition:.3s ease;
 }
 
-/* Hamburger Menu */
+header .book-btn:hover{
+    background:#42a5f5;
+    transform:translateY(-2px);
+    box-shadow:0 0 25px rgba(33,150,243,.45);
+}
+
+/* =========================================
+   GET APP BUTTON
+   ========================================= */
+
+header .get-app-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:10px 16px;
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(33,150,243,.7);
+    border-radius:50px;
+    font-family:inherit;
+    font-size:14px;
+    font-weight:600;
+    white-space:nowrap;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+header .get-app-btn:hover{
+    background:#2196f3;
+    color:#000;
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(33,150,243,.3);
+}
+
+/* =========================================
+   HAMBURGER MENU
+   ========================================= */
+
 header .menu{
     display:none;
-    width:52px;
-    height:52px;
+    width:48px;
+    height:48px;
     align-items:center;
     justify-content:center;
     cursor:pointer;
     color:#fff !important;
-    background:transparent !important;
-    border:0 !important;
+    background:rgba(33,150,243,.08) !important;
+    border:1px solid rgba(33,150,243,.25) !important;
+    border-radius:12px;
     padding:0 !important;
-    font-size:36px !important;
+    font-size:28px !important;
     line-height:1;
     z-index:1100;
+    transition:.3s ease;
+}
+
+header .menu:hover{
+    background:#2196f3 !important;
+    color:#000 !important;
 }
 
 header .menu i{
     color:#fff !important;
-    font-size:36px;
+    font-size:27px;
+    transition:.3s ease;
 }
 
-/* Mobile Header */
-@media(max-width:900px){
+header .menu:hover i{
+    color:#000 !important;
+}
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+   ========================================= */
+
+@media(max-width:1200px){
 
     header{
-        padding:10px 6%;
-        min-height:78px;
+        padding-left:4%;
+        padding-right:4%;
+        gap:14px;
     }
 
     header .logo-img{
-        width:175px !important;
-        max-height:68px;
+        width:145px !important;
+        max-height:62px;
+    }
+
+    header nav{
+        gap:14px;
+    }
+
+    header nav a{
+        font-size:13px;
+    }
+
+    header .book-btn{
+        padding:10px 15px;
+        font-size:13px;
+    }
+
+    header .get-app-btn{
+        padding:9px 13px;
+        font-size:13px;
+    }
+}
+
+/* =========================================
+   MOBILE HEADER
+   ========================================= */
+
+@media(max-width:900px){
+
+    header{
+        min-height:74px;
+        padding:8px 5%;
+        gap:12px;
+    }
+
+    header .logo-img{
+        width:165px !important;
+        max-height:64px;
     }
 
     header nav,
-    header .book-btn{
+    header .book-btn,
+    header .get-app-btn{
         display:none !important;
+    }
+
+    header .logo{
+        margin-right:auto;
     }
 
     header .menu{
         display:flex !important;
+        flex-shrink:0;
     }
-
 }
 
-/* Smaller phones */
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
 @media(max-width:480px){
 
     header{
-        padding:8px 5%;
-        min-height:72px;
+        min-height:68px;
+        padding:7px 4%;
     }
 
     header .logo-img{
-        width:155px !important;
-        max-height:62px;
+        width:145px !important;
+        max-height:58px;
+        border-radius:12px;
+    }
+
+    header .menu{
+        width:45px;
+        height:45px;
+        border-radius:11px;
     }
 
     header .menu,
     header .menu i{
-        font-size:34px !important;
+        font-size:26px !important;
+    }
+}
+
+/* =========================================
+   EXTRA SMALL PHONES
+   ========================================= */
+
+@media(max-width:360px){
+
+    header .logo-img{
+        width:130px !important;
+        max-height:53px;
     }
 
     header .menu{
-        width:48px;
-        height:48px;
+        width:42px;
+        height:42px;
     }
-
 }
