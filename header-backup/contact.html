@@ -1,0 +1,947 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact FitPals™ | Personal Fitness Training</title>
+
+<meta name="description"
+content="Contact FitPals™ for personal fitness training, strength and conditioning, mobility, performance coaching and training enquiries.">
+
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eltonelucas46-debug.github.io/FitPalsWebsite/contact.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact FitPals™">
+<meta property="og:description" content="Get in touch with FitPals™ for personal fitness training and coaching enquiries.">
+<meta property="og:url" content="https://eltonelucas46-debug.github.io/FitPalsWebsite/contact.html">
+<meta property="og:site_name" content="FitPals™">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Contact FitPals™">
+<meta name="twitter:description" content="Contact FitPals™ for fitness training and coaching enquiries.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact FitPals™",
+  "description": "Contact FitPals™ for personal fitness training and coaching enquiries.",
+  "url": "https://eltonelucas46-debug.github.io/FitPalsWebsite/contact.html"
+}
+</script>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+/* PART 2 CSS GOES HERE */
+  *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0a0a0a;
+color:#fff;
+overflow-x:hidden;
+}
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#2196f3;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
+}
+
+/* ================= HEADER ================= */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#fff;
+backdrop-filter:blur(15px);
+z-index:1000;
+}
+
+.logo{
+display:flex;
+align-items:center;
+font-size:34px;
+font-weight:800;
+color:#2196f3;
+}
+
+.logo span{
+color:#fff;
+}
+
+.logo-img{
+width:180px;
+height:auto;
+display:block;
+border:0;
+border-radius:16px;
+object-fit:contain;
+overflow:hidden;
+-webkit-mask-image:-webkit-radial-gradient(white,black);
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#2196f3;
+}
+
+.book-btn{
+padding:12px 25px;
+background:#2196f3;
+color:#000;
+text-decoration:none;
+font-weight:bold;
+border-radius:50px;
+transition:.3s;
+}
+
+.book-btn:hover{
+transform:translateY(-3px);
+}
+
+.menu{
+display:none;
+font-size:30px;
+cursor:pointer;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+position:fixed;
+right:-320px;
+top:0;
+width:300px;
+height:100%;
+background:#111;
+padding:40px;
+transition:.4s;
+z-index:2000;
+}
+
+.sidebar h2{
+color:#2196f3;
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+margin:18px 0;
+color:#fff;
+text-decoration:none;
+}
+
+.close{
+font-size:30px;
+cursor:pointer;
+float:right;
+margin-bottom:20px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+height:70vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+background:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1500&q=80') center/cover;
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:#fff;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding:20px;
+max-width:800px;
+}
+
+.hero-content small{
+letter-spacing:3px;
+color:#2196f3;
+}
+
+.hero-content h1{
+font-size:60px;
+margin:20px 0;
+}
+
+.hero-content span{
+color:#2196f3;
+}
+
+.hero-content p{
+line-height:1.9;
+color:#ddd;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+padding:100px 8%;
+text-align:center;
+background:#111;
+}
+
+.contact h2{
+font-size:42px;
+color:#2196f3;
+margin-bottom:20px;
+}
+
+.contact p{
+color:#ccc;
+margin-bottom:50px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#0a0a0a;
+padding:35px;
+border-radius:20px;
+transition:.4s;
+border:1px solid #222;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#2196f3;
+box-shadow:0 0 25px rgba(33,150,243,.3);
+}
+
+.card i{
+font-size:45px;
+color:#2196f3;
+margin-bottom:20px;
+}
+
+.card h3{
+margin-bottom:15px;
+}
+
+.card a{
+color:#fff;
+text-decoration:none;
+}
+
+.card a:hover{
+color:#2196f3;
+}
+
+/* ================= FORM ================= */
+
+.form-section{
+padding:100px 8%;
+background:#0a0a0a;
+text-align:center;
+}
+
+.form-section h2{
+font-size:42px;
+color:#2196f3;
+margin-bottom:40px;
+}
+
+form{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+input,
+textarea{
+padding:18px;
+background:#111;
+border:1px solid #333;
+border-radius:12px;
+color:#fff;
+font-size:16px;
+}
+
+input:focus,
+textarea:focus{
+outline:none;
+border-color:#2196f3;
+}
+
+button{
+padding:18px;
+border:none;
+background:#2196f3;
+color:#000;
+font-weight:bold;
+font-size:18px;
+border-radius:50px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+}
+
+/* ================= MAP ================= */
+
+.map{
+padding:100px 8%;
+background:#111;
+text-align:center;
+}
+
+.map h2{
+font-size:42px;
+color:#2196f3;
+margin-bottom:35px;
+}
+
+.map iframe{
+width:100%;
+height:450px;
+border:none;
+border-radius:20px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#000;
+padding:50px 8%;
+text-align:center;
+}
+
+.footer-logo{
+font-size:34px;
+font-weight:800;
+color:#2196f3;
+margin-bottom:25px;
+}
+
+.footer-logo span{
+color:#fff;
+}
+
+.footer-links{
+margin-bottom:25px;
+}
+
+.footer-links a{
+color:#ddd;
+margin:0 12px;
+text-decoration:none;
+}
+
+.footer-links a:hover{
+color:#2196f3;
+}
+
+.socials{
+margin-bottom:25px;
+}
+
+.socials a{
+color:#fff;
+font-size:26px;
+margin:0 12px;
+transition:.3s;
+}
+
+.socials a:hover{
+color:#2196f3;
+}
+
+.booking{
+position:fixed;
+right:25px;
+bottom:25px;
+width:70px;
+height:70px;
+background:#2196f3;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+color:#000;
+text-decoration:none;
+box-shadow:0 0 25px #2196f3;
+z-index:1000;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.book-btn{
+display:none;
+}
+
+.menu{
+display:block;
+}
+
+.hero-content h1{
+font-size:42px;
+}
+
+.hero{
+height:60vh;
+}
+
+.logo{
+font-size:26px;
+}
+
+.logo-img{
+width:40px;
+height:40px;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+
+<img src="new-logo.jpg" class="logo-img" alt="FitPals™">
+
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About FitPals</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="booking.html">Booking</a>
+    <a href="feeds.html">Feeds</a>
+    <a href="account.html">Account</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="admin.html" style="color:#2196f3;font-weight:bold;">
+        <i class="fas fa-user-shield"></i> Admin Dashboard
+    </a>
+</nav>
+
+<a href="booking.html"
+class="book-btn">
+
+Book Session
+
+</a>
+
+<div class="menu"
+onclick="openMenu()">
+
+<i class="fas fa-bars"></i>
+
+</div>
+
+</header>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar" id="sidebar">
+
+<div class="close"
+onclick="closeMenu()">
+
+<i class="fas fa-times"></i>
+
+</div>
+
+<h2>FitPals</h2>
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About FitPals</a>
+
+<a href="merchandise.html">Merchandise</a>
+
+<a href="booking.html">Booking</a>
+
+<a href="contact.html">Contact</a>
+  <a href="feeds.html">Feeds</a>
+<a href="account.html">Account</a>
+
+</div>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<small>CONTACT FITPALS</small>
+
+<h1>
+
+Let's Build<br>
+
+<span>Your Fitness Journey</span>
+
+</h1>
+
+<p>
+
+Have a question, want to book a session or simply need fitness advice?
+
+Reach out today and let's achieve your goals together.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact">
+
+<h2>Get In Touch</h2>
+
+<p>
+
+Choose your preferred method below.
+
+I'm always happy to help.
+
+</p>
+
+<div class="contact-grid">
+
+<div class="card">
+
+<i class="fas fa-map-marker-alt"></i>
+
+<h3>Location</h3>
+
+<p>
+
+Juja Road<br>
+
+Nairobi, Kenya
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-phone"></i>
+
+<h3>WhatsApp</h3>
+
+<a href="https://wa.me/254701350931"
+target="_blank">
+
++254 701 350 931
+
+</a>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-envelope"></i>
+
+<h3>Email</h3>
+
+<a href="mailto:lucasphilip487@gmail.com">
+
+lucasphilip487@gmail.com
+
+</a>
+
+</div>
+
+<div class="card">
+
+<i class="fab fa-facebook"></i>
+
+<h3>Facebook</h3>
+
+<a href="https://www.facebook.com/philip.lucasodhiambo"
+target="_blank">
+
+Philip Lucas Odhiambo
+
+</a>
+
+</div>
+
+<div class="card">
+
+<i class="fab fa-tiktok"></i>
+
+<h3>TikTok</h3>
+
+<a href="https://www.tiktok.com/@philip_lucas1"
+target="_blank">
+
+@philip_lucas1
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT FORM ================= -->
+
+<section class="form-section">
+
+<h2>Send a Message</h2>
+
+<form>
+
+<input
+type="text"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+placeholder="Email Address"
+required>
+
+<input
+type="tel"
+placeholder="Phone Number">
+
+<textarea
+rows="6"
+placeholder="Write your message..."
+required></textarea>
+
+<button
+type="submit">
+
+Send Message
+
+</button>
+
+</form>
+
+</section>
+
+<!-- ================= MAP ================= -->
+
+<section class="map">
+
+<h2>Visit FitPals</h2>
+
+<iframe
+
+src="https://maps.google.com/maps?q=Juja%20Road%20Nairobi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+
+loading="lazy"
+
+allowfullscreen>
+
+</iframe>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-logo">
+
+Fit<span>Pals™</span>
+
+</div>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="merchandise.html">Merchandise</a>
+
+<a href="booking.html">Booking</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="socials">
+
+<a href="https://www.facebook.com/philip.lucasodhiambo"
+target="_blank">
+
+<i class="fab fa-facebook"></i>
+
+</a>
+
+<a href="https://wa.me/254701350931"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<a href="https://www.tiktok.com/@philip_lucas1"
+target="_blank">
+
+<i class="fab fa-tiktok"></i>
+
+</a>
+
+<a href="mailto:lucasphilip487@gmail.com">
+
+<i class="fas fa-envelope"></i>
+
+</a>
+
+</div>
+
+<p>
+
+© 2026 FitPals™ | Designed by Eltone Lucas
+
+<br>
+
+All Rights Reserved
+
+</p>
+
+</footer>
+
+<!-- Floating WhatsApp -->
+
+<a href="https://wa.me/254701350931"
+
+class="booking"
+
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<script>
+
+/* PART 3 JAVASCRIPT GOES HERE */
+  /* ===========================
+   MOBILE SIDEBAR
+=========================== */
+
+const sidebar = document.getElementById("sidebar");
+
+function openMenu(){
+    sidebar.style.right = "0";
+}
+
+function closeMenu(){
+    sidebar.style.right = "-320px";
+}
+
+document.querySelectorAll(".sidebar a").forEach(link=>{
+    link.addEventListener("click", closeMenu);
+});
+
+
+/* ===========================
+   REVEAL ANIMATION
+=========================== */
+
+const sections = document.querySelectorAll(
+".contact,.form-section,.map"
+);
+
+sections.forEach(section=>{
+    section.style.opacity = "0";
+    section.style.transform = "translateY(60px)";
+    section.style.transition = ".8s";
+});
+
+function revealSections(){
+
+    sections.forEach(section=>{
+
+        const top = section.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 120){
+
+            section.style.opacity = "1";
+            section.style.transform = "translateY(0)";
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealSections);
+
+revealSections();
+
+
+/* ===========================
+   HEADER BACKGROUND
+=========================== */
+
+window.addEventListener("scroll", ()=>{
+
+    const header = document.querySelector("header");
+
+    if(window.scrollY > 80){
+
+        header.style.background = "rgba(0,0,0,.92)";
+
+    }else{
+
+        header.style.background = "rgba(0,0,0,.75)";
+
+    }
+
+});
+
+
+/* ===========================
+   BUTTON HOVER EFFECT
+=========================== */
+
+const buttons = document.querySelectorAll(
+"button,.book-btn,.booking"
+);
+
+buttons.forEach(button=>{
+
+    button.addEventListener("mouseenter", ()=>{
+
+        button.style.boxShadow = "0 0 25px #2196f3";
+
+    });
+
+    button.addEventListener("mouseleave", ()=>{
+
+        button.style.boxShadow = "none";
+
+    });
+
+});
+
+
+/* ===========================
+   CONTACT CARD ANIMATION
+=========================== */
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+    card.addEventListener("mouseenter", ()=>{
+
+        card.style.transform = "translateY(-10px) scale(1.03)";
+
+    });
+
+    card.addEventListener("mouseleave", ()=>{
+
+        card.style.transform = "translateY(0) scale(1)";
+
+    });
+
+});
+
+
+/* ===========================
+   CONTACT FORM
+=========================== */
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert(
+        "Thank you for contacting FitPals! We have received your message and will get back to you soon."
+    );
+
+    form.reset();
+
+});
+
+</script>
+
+</body>
+
+</html>

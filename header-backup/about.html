@@ -1,0 +1,1830 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About FitPals™ | Personal Fitness Training in Kenya</title>
+<meta name="description" content="Learn about FitPals™, our personal fitness training approach, mission, values, training philosophy, and professional trainer Philip.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eltonelucas46-debug.github.io/FitPalsWebsite/about.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="About FitPals™ | Personal Fitness Training">
+<meta property="og:description" content="Discover FitPals™, our training philosophy, mission, values and approach to personal fitness.">
+<meta property="og:url" content="https://eltonelucas46-debug.github.io/FitPalsWebsite/about.html">
+<meta property="og:site_name" content="FitPals™">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About FitPals™">
+<meta name="twitter:description" content="Learn about FitPals™, our mission, values and personal fitness training approach.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About FitPals™",
+  "description": "Learn about FitPals™, its mission, values and personal fitness training approach.",
+  "url": "https://eltonelucas46-debug.github.io/FitPalsWebsite/about.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "FitPals™",
+    "url": "https://eltonelucas46-debug.github.io/FitPalsWebsite/"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+  .logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo-img{
+    width:180px;
+    height:auto;
+    display:block;
+    border:0;
+    border-radius:16px;
+    object-fit:contain;
+    overflow:hidden;
+    -webkit-mask-image:-webkit-radial-gradient(white,black);
+}
+  /* ================= TRAINING IMAGE ================= */
+.training-image{
+width:100%;
+max-width:950px;
+height:420px;
+margin:25px auto 40px;
+overflow:hidden;
+border-radius:20px;
+border:2px solid #2196f3;
+box-shadow:0 10px 30px rgba(0,255,136,.25);
+}
+
+.training-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.5s;
+}
+
+.training-image img:hover{
+transform:scale(1.05);
+}
+
+/* ================= HORIZONTAL SCROLL CARDS ================= */
+
+.scroll-wrapper{
+margin:30px 0;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+scroll-behavior:smooth;
+padding-bottom:15px;
+}
+
+.scroll-wrapper::-webkit-scrollbar{
+height:10px;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb{
+background:#2196f3;
+border-radius:20px;
+}
+
+.scroll-cards{
+display:flex;
+gap:20px;
+width:max-content;
+}
+
+.exercise-card{
+scroll-snap-align:start;
+flex:0 0 280px;
+background:#111;
+border:1px solid #222;
+border-radius:18px;
+overflow:hidden;
+transition:.35s;
+}
+
+.exercise-card:hover{
+transform:translateY(-8px);
+border-color:#2196f3;
+box-shadow:0 10px 30px rgba(0,255,136,.2);
+}
+
+.exercise-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.exercise-card h4{
+padding:15px;
+font-size:22px;
+color:#2196f3;
+text-align:center;
+}
+
+.exercise-card ul{
+padding:0 20px 20px;
+}
+
+.exercise-card li{
+margin:8px 0;
+line-height:1.6;
+color:#ddd;
+}
+  p1{
+    text-align:left;
+    }
+  h3{
+    text-align:left;
+    color:#2196f3;
+    font-size: 25px;
+    }
+  h4{
+    text-align:left;
+    color:#2196f3;
+    font-size:20px;
+    }
+  .hero-about{
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-about::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    filter:brightness(1.3);
+    z-index:-2;
+}
+
+.hero-about::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.25);
+    z-index:-1;
+}
+  @media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.menu{
+display:block;
+}
+
+  }
+  /* ================= WHY CHOOSE ================= */
+.why{
+padding:100px 8%;
+background:#0a0a0a;
+text-align:center;
+}
+
+.why h2{
+font-size:42px;
+color:#2196f3;
+margin-bottom:50px;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.why-card{
+background:#111;
+padding:30px;
+border-radius:20px;
+border:1px solid #222;
+transition:.4s;
+}
+
+.why-card:hover{
+transform:translateY(-10px);
+border-color:#2196f3;
+}
+
+.why-card i{
+font-size:40px;
+color:#2196f3;
+margin-bottom:15px;
+}
+
+/* ================= FAQ ================= */
+.faq{
+padding:100px 8%;
+background:#111;
+}
+
+.faq h2{
+text-align:center;
+font-size:42px;
+color:#2196f3;
+margin-bottom:50px;
+}
+
+.faq-container{
+max-width:800px;
+margin:auto;
+}
+
+.faq-item{
+margin-bottom:15px;
+border:1px solid #222;
+border-radius:10px;
+overflow:hidden;
+}
+
+.faq-question{
+width:100%;
+padding:18px;
+background:#0a0a0a;
+color:#fff;
+border:none;
+text-align:left;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+.faq-question:hover{
+background:#2196f3;
+color:#000;
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:.4s ease;
+background:#111;
+padding:0 18px;
+color:#ddd;
+}
+
+.faq-item.active .faq-answer{
+max-height:200px;
+padding:15px 18px;
+}
+
+/* ================= CTA ABOUT ================= */
+.cta-about{
+padding:100px 8%;
+background:#0a0a0a;
+text-align:center;
+}
+
+.cta-about h2{
+font-size:42px;
+color:#2196f3;
+margin-bottom:20px;
+}
+
+.cta-about p{
+color:#ddd;
+max-width:700px;
+margin:auto;
+line-height:2;
+margin-bottom:30px;
+}
+
+.cta-about a{
+display:inline-block;
+padding:15px 35px;
+background:#2196f3;
+color:#000;
+text-decoration:none;
+font-weight:bold;
+border-radius:50px;
+  }
+  /* ================= MISSION & VISION ================= */
+.mv-section{
+padding:100px 8%;
+background:#0a0a0a;
+}
+
+.mv-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.mv-card{
+background:#111;
+padding:35px;
+border-radius:20px;
+border:1px solid #222;
+transition:.4s;
+}
+
+.mv-card:hover{
+transform:translateY(-8px);
+border-color:#2196f3;
+}
+
+.mv-card h2{
+color:#2196f3;
+margin-bottom:15px;
+font-size:26px;
+}
+
+.mv-card p{
+color:#ddd;
+line-height:1.8;
+}
+
+/* ================= PHILOSOPHY ================= */
+.philosophy{
+padding:100px 8%;
+background:#111;
+text-align:center;
+}
+
+.philosophy h2{
+font-size:42px;
+color:#2196f3;
+margin-bottom:20px;
+}
+
+.philosophy p{
+max-width:800px;
+margin:auto;
+color:#ddd;
+line-height:2;
+margin-bottom:50px;
+}
+
+.philosophy-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.philo-card{
+background:#0a0a0a;
+padding:30px;
+border-radius:20px;
+border:1px solid #222;
+transition:.4s;
+}
+
+.philo-card:hover{
+border-color:#2196f3;
+transform:translateY(-8px);
+}
+
+.philo-card i{
+font-size:40px;
+color:#2196f3;
+margin-bottom:15px;
+}
+
+.philo-card h3{
+margin-bottom:10px;
+}
+
+/* ================= VALUES ================= */
+.values{
+padding:100px 8%;
+background:#0a0a0a;
+text-align:center;
+}
+
+.values h2{
+font-size:42px;
+color:#2196f3;
+margin-bottom:50px;
+}
+
+.values-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.value-card{
+background:#111;
+padding:30px;
+border-radius:20px;
+border:1px solid #222;
+transition:.4s;
+}
+
+.value-card:hover{
+transform:translateY(-8px);
+border-color:#2196f3;
+}
+
+.value-card i{
+font-size:35px;
+color:#2196f3;
+margin-bottom:15px;
+}
+
+/* ================= TRAINER EXTENDED ================= */
+.trainer-extended{
+padding:100px 8%;
+background:#111;
+}
+
+.trainer-box{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+align-items:center;
+justify-content:space-between;
+}
+
+.trainer-text{
+flex:1;
+min-width:300px;
+}
+
+.trainer-text h2{
+font-size:42px;
+color:#2196f3;
+margin-bottom:20px;
+}
+
+.trainer-text p{
+color:#ddd;
+line-height:2;
+margin-bottom:15px;
+}
+
+.trainer-stats{
+flex:1;
+min-width:250px;
+display:grid;
+gap:20px;
+}
+
+.t-stat{
+background:#0a0a0a;
+padding:25px;
+border-radius:15px;
+text-align:center;
+border:1px solid #222;
+}
+
+.t-stat h3{
+color:#2196f3;
+font-size:32px;
+}
+
+/* ================= GLOBAL ================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0a0a0a;
+color:#fff;
+overflow-x:hidden;
+  padding-top: 80px;
+}
+
+/* ================= HEADER ================= */
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#fff;
+backdrop-filter:blur(15px);
+z-index:1000;
+}
+
+.logo{
+font-size:34px;
+font-weight:800;
+color:#2196f3;
+}
+
+.logo span{
+color:#fff;
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+font-size:16px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#2196f3;
+}
+
+.book-btn{
+padding:12px 25px;
+background:#2196f3;
+color:#000;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+transition:.3s;
+}
+
+.book-btn:hover{
+transform:translateY(-4px);
+}
+
+.menu{
+display:none;
+font-size:30px;
+cursor:pointer;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar{
+position:fixed;
+right:-320px;
+top:0;
+width:300px;
+height:100%;
+background:#111;
+padding:40px;
+transition:.4s;
+z-index:2000;
+}
+
+.sidebar h2{
+color:#2196f3;
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+margin:20px 0;
+color:#fff;
+text-decoration:none;
+font-size:18px;
+}
+
+.close{
+font-size:30px;
+cursor:pointer;
+float:right;
+margin-bottom:20px;
+}
+
+/* ================= HERO ================= */
+.hero-about{
+height:60vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+background:
+linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+
+.hero-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.7);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:800px;
+padding:20px;
+}
+
+.hero-content h1{
+font-size:60px;
+color:#2196f3;
+}
+
+.hero-content p{
+margin-top:15px;
+font-size:18px;
+color:#ddd;
+line-height:1.8;
+}
+
+/* ================= ABOUT INTRO ================= */
+.about-intro{
+padding:100px 8%;
+background:#111;
+text-align:center;
+}
+
+.about-intro h2{
+font-size:42px;
+color:#2196f3;
+margin-bottom:20px;
+}
+
+.about-intro p{
+max-width:900px;
+margin:auto;
+font-size:18px;
+line-height:2;
+color:#ddd;
+}
+
+.about-intro span{
+color:#2196f3;
+font-weight:700;
+}
+  footer{
+background:#000;
+padding:60px 8%;
+text-align:center;
+margin-top:50px;
+}
+
+.footer-logo{
+font-size:32px;
+font-weight:800;
+color:#2196f3;
+margin-bottom:20px;
+}
+
+.footer-logo span{
+color:#fff;
+}
+
+.footer-links{
+margin-bottom:20px;
+}
+
+.footer-links a{
+color:#ddd;
+margin:0 10px;
+text-decoration:none;
+transition:.3s;
+}
+
+.footer-links a:hover{
+color:#2196f3;
+}
+
+.socials{
+margin-bottom:20px;
+}
+
+.socials a{
+color:#fff;
+font-size:22px;
+margin:0 10px;
+transition:.3s;
+}
+
+.socials a:hover{
+color:#2196f3;
+}
+
+footer p{
+color:#aaa;
+font-size:14px;
+}
+  @media(max-width:900px){
+
+nav{
+    display:none;
+}
+
+.book-btn{
+    display:none;
+}
+
+.menu{
+    display:block;
+}
+
+.hero-content h1{
+    font-size:45px;
+}
+
+.hero-content p{
+    font-size:16px;
+}
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+    <img src="new-logo.jpg" class="logo-img" alt="FitPals™">
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About FitPals</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="booking.html">Booking</a>
+    <a href="feeds.html">Feeds</a>
+    <a href="account.html">Account</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="admin.html" style="color:#2196f3;font-weight:bold;">
+        <i class="fas fa-user-shield"></i> Admin Dashboard
+    </a>
+</nav>
+
+<a href="booking.html" class="book-btn">
+Book Session
+</a>
+
+<div class="menu" onclick="openMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+</header>
+
+<!-- ================= SIDEBAR ================= -->
+<div class="sidebar" id="sidebar">
+
+<div class="close" onclick="closeMenu()">
+<i class="fas fa-times"></i>
+</div>
+
+<h2>FitPals</h2>
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About FitPals</a>
+
+<a href="merchandise.html">Merchandise</a>
+
+<a href="booking.html">Booking</a>
+
+<a href="contact.html">Contact</a>
+  <a href="feeds.html">Feeds</a>
+<a href="account.html">Account</a>
+
+<a href="admin.html" style="color:#2196f3;font-weight:bold;">
+<i class="fas fa-user-shield"></i> Admin Dashboard
+</a>
+
+</div>
+
+<!-- ================= HERO ================= -->
+<section id="about" class="hero-about">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h1>About FitPals</h1>
+
+<p>
+Discover the story, mission and coaching philosophy behind FitPals — a modern fitness brand built to transform lives through smart, structured and sustainable training.
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT INTRO ================= -->
+<section class="about-intro">
+
+<h2>Who We Are</h2>
+
+<p>
+<span>FitPals</span> is a personal training brand focused on helping individuals achieve real, lasting fitness results. We combine science-based training, discipline, and motivation to create customized programs for strength, mobility, conditioning and athletic performance.
+<br><br>
+Every journey is personal — and at FitPals, your transformation is our priority.
+</p>
+
+</section>
+  <section class="about-intro">
+    <h2>Training Programmes</h2>
+  </section>
+  <section id="dynamic-mobility" class="about-intro">
+    <h2 style="text-align:center;">Dynamic Mobility</h2>
+    <div class="training-image">
+<img src="mobility.jpg" alt="Dynamic Mobility Training">
+    </div>
+  <h3>Definition</h3>
+<p style="text-align:left;">Dynamic Mobility Training is a form of movement training that improves joint mobility, flexibility, muscle activation, coordination, balance, and movement efficiency through controlled movements. Unlike static stretching, the body remains in motion throughout the exercises.</p>
+<h3>Objectives</h3>
+<p style="text-align:left;"">Increase joint range of motion<br>
+Improve movement quality<br>
+Enhance athletic performance<br>
+Reduce injury risk<br>
+Prepare the body for exercise<br>
+Improve posture<br></p>
+<h3>Benefits</h3>
+<p style="text-align:left;">Better flexibility<br>
+Improved coordination<br>
+Increased blood circulation<br>
+Enhanced muscle activation<br>
+Faster reaction time<br>
+Reduced muscle stiffness<br>
+Improved balance<br>
+Better sports performance<br></p>
+<h3>Major Components</h3>
+<p style="text-align:left;">Joint Mobility<br>
+Dynamic Stretching<br>
+Functional Movement<br>
+Balance Training<br>
+Core Activation<br>
+Neuro<span>muscular</span> Coordination<br></p>
+<h3>Common Dynamic Mobility Exercises</h3>
+
+<div class="scroll-wrapper">
+
+<div class="scroll-cards">
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80">
+
+<h4>Upper Body</h4>
+
+<ul>
+<li>Arm Circles</li>
+<li>Shoulder Rolls</li>
+<li>Arm Swings</li>
+<li>Band Pull-Aparts</li>
+<li>Thoracic Rotations</li>
+<li>Scapular Push-ups</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80">
+
+<h4>Lower Body</h4>
+
+<ul>
+<li>Leg Swings</li>
+<li>Hip Circles</li>
+<li>Walking Lunges</li>
+<li>World's Greatest Stretch</li>
+<li>Knee Hugs</li>
+<li>Heel-to-Toe Walk</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80">
+
+<h4>Full Body</h4>
+
+<ul>
+<li>Inchworms</li>
+<li>Bear Crawls</li>
+<li>High Knees</li>
+<li>Butt Kicks</li>
+<li>Carioca Drill</li>
+<li>Walking Toe Touches</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+<h3>Equipment</h3>
+<p style="text-align:left;">Resistance Bands<br>
+Foam Rollers<br>
+PVC Pipes<br>
+Medicine Balls<br>
+Stability Balls<br>
+Yoga Mats<br></p>
+<h3>Training Frequency</h3>
+<p style="text-align:left;">Daily<br>
+Before workouts<br>
+During warm-up<br>
+Recovery sessions<br></p>
+  </section>
+  <section id="s/r" class="about-intro">
+    <h2>Strength - Resistance</h2>
+    <div class="training-image">
+<img src="strength.jpg" alt="Strength & Resistance Training">
+    </div>
+    <h3>Definition</h3>
+<p style="text-align:left;">Strength (Resistance) Training involves exercising muscles against resistance to increase muscular strength, endurance, size, and bone density.</p>
+<h3>Goals</h3>
+<p style="text-align:left;">Build muscle strength<br>
+Increase muscle mass (Hypertrophy)<br>
+Improve endurance<br>
+Enhance functional ability<br>
+Strengthen bones<br>
+Increase metabolism<br></p>
+<h3>Benefits</h3>
+<p style="text-align:left;">Stronger muscles<br>
+Improved posture<br>
+Increased bone density<br>
+Better athletic performance<br>
+Weight management<br>
+Reduced injury risk<br>
+Better joint stability<br>
+Improved mental health<br></p>
+<h3>Types of Resistance</h3>
+
+<div class="scroll-wrapper">
+<div class="scroll-cards">
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80">
+
+<h4>Bodyweight</h4>
+
+<ul>
+<li>Push-ups</li>
+<li>Pull-ups</li>
+<li>Squats</li>
+<li>Lunges</li>
+<li>Dips</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80">
+
+<h4>Free Weights</h4>
+
+<ul>
+<li>Dumbbells</li>
+<li>Barbells</li>
+<li>Kettlebells</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=700&q=80">
+
+<h4>Machines</h4>
+
+<ul>
+<li>Leg Press</li>
+<li>Chest Press</li>
+<li>Lat Pulldown</li>
+<li>Cable Machine</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80">
+
+<h4>Elastic</h4>
+
+<ul>
+<li>Resistance Bands</li>
+<li>Tubing</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80" alt="Olympic Weightlifting">
+
+<h4>Functional</h4>
+
+<ul>
+<li>Sandbags</li>
+<li>Battle Ropes</li>
+<li>TRX Suspension</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+<h3>Types of Strength</h3>
+<p style="text-align:left;">Maximum Strength<br>
+Relative Strength<br>
+Functional Strength<br>
+Muscular Endurance<br>
+Explosive Strength<br></p>
+<h3>Training Variables</h3>
+<h4>Intensity</h4>
+<p style="text-align:left;">Weight lifted relative to maximum capacity.</p>
+<h4>Volume</h4>
+<p style="text-align:left;">Sets × Repetitions × Load.</p>
+<h4>Frequency</h4>
+<p style="text-align:left;">Number of training sessions per week.</p>
+<h4>Rest Interval</h4>
+<p style="text-align:left;">Recovery time between sets.</p>
+<h4>Progressive Overload</h4>
+<p style="text-align:left;">Gradually increasing workload over time.</p>
+<h3>Common Exercises</h3>
+
+<div class="scroll-wrapper">
+<div class="scroll-cards">
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=700&q=80">
+
+<h4>Chest</h4>
+
+<ul>
+<li>Bench Press</li>
+<li>Push-ups</li>
+<li>Dumbbell Flyes</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80">
+
+<h4>Back</h4>
+
+<ul>
+<li>Deadlift</li>
+<li>Pull-ups</li>
+<li>Barbell Rows</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?auto=format&fit=crop&w=700&q=80">
+
+<h4>Shoulders</h4>
+
+<ul>
+<li>Overhead Press</li>
+<li>Lateral Raises</li>
+<li>Front Raises</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80">
+
+<h4>Arms</h4>
+
+<ul>
+<li>Bicep Curls</li>
+<li>Tricep Dips</li>
+<li>Hammer Curls</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1434596922112-19c563067271?auto=format&fit=crop&w=700&q=80">
+
+<h4>Legs</h4>
+
+<ul>
+<li>Squats</li>
+<li>Romanian Deadlifts</li>
+<li>Leg Press</li>
+<li>Step-ups</li>
+<li>Lunges</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=700&q=80">
+
+<h4>Core</h4>
+
+<ul>
+<li>Planks</li>
+<li>Russian Twists</li>
+<li>Hanging Leg Raises</li>
+<li>Mountain Climbers</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+    </section>
+  <section id="cond" class="about-intro">
+    <h2>Conditioning</h2>
+    <div class="training-image">
+    <img src="conditioning.jpg" alt="Conditioning Training">
+    </div>
+    <h3>Definition</h3>
+<p style="text-align:left;">Conditioning Training improves the body's ability to sustain physical activity by enhancing the cardiovascular, respiratory, muscular, and metabolic systems.</p>
+<h3>Objectives</h3>
+<p style="text-align:left;">Increase stamina<br>
+Improve endurance<br>
+Boost cardiovascular fitness<br>
+Enhance recovery<br>
+Improve work capacity<br></p>
+<h3>Benefits<h2>
+<p style="text-align:left;">Stronger heart<br>
+Better lung efficiency<br>
+Increased energy<br>
+Improved recovery<br>
+Better fat burning<br>
+Reduced fatigue<br>
+Better athletic performance</p>
+<h3>Types of Conditioning</h3>
+
+<div class="scroll-wrapper">
+<div class="scroll-cards">
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=700&q=80">
+
+<h4>Aerobic</h4>
+
+<ul>
+<li>Walking</li>
+<li>Jogging</li>
+<li>Cycling</li>
+<li>Swimming</li>
+<li>Rowing</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80">
+
+<h4>Anaerobic</h4>
+
+<ul>
+<li>Sprinting</li>
+<li>HIIT</li>
+<li>Hill Sprints</li>
+<li>Bike Intervals</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=700&q=80">
+
+<h4>MetCon</h4>
+
+<ul>
+<li>Circuit Training</li>
+<li>CrossFit</li>
+<li>EMOM</li>
+<li>AMRAP</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+<h3>Conditioning Methods</h3>
+
+<div class="values-grid">
+
+<div class="value-card">
+<i class="fas fa-stopwatch"></i>
+<h3>Interval Training</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-running"></i>
+<h3>Continuous Training</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-route"></i>
+<h3>Fartlek Training</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-dumbbell"></i>
+<h3>Circuit Training</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-fire"></i>
+<h3>Tempo Runs</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-mountain"></i>
+<h3>Hill Training</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-arrows-left-right"></i>
+<h3>Shuttle Runs</h3>
+</div>
+
+</div>
+<h3>Common Conditioning Exercises</h3>
+
+<div class="scroll-wrapper">
+<div class="scroll-cards">
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80">
+
+<h4>Cardio</h4>
+
+<ul>
+<li>Running</li>
+<li>Cycling</li>
+<li>Rowing</li>
+<li>Jump Rope</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80">
+
+<h4>HIIT</h4>
+
+<ul>
+<li>Burpees</li>
+<li>Mountain Climbers</li>
+<li>Jump Squats</li>
+<li>High Knees</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=700&q=80">
+
+<h4>Functional</h4>
+
+<ul>
+<li>Battle Ropes</li>
+<li>Sled Pushes</li>
+<li>Farmer's Carry</li>
+<li>Kettlebell Swings</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+<h3>Components of Physical Fitness Improved</h3>
+<p style="text-align:left;">Cardiovascular<br> Endurance<br>
+Muscular Endurance<br>
+Speed<br>
+Agility<br>
+Coordination<br>
+Balance<br>
+Power<br>
+Flexibility</p>
+<h3>Energy Systems Used</h3>
+<h4>ATP-PC System</h4>
+<p style="text-align:left;">Used for very short, explosive efforts (0–10 seconds).</p>
+<h4>Anaerobic Glycolytic System</h4>
+<p style="text-align:left;">Used for intense efforts lasting about 10 seconds to 2 minutes.</p>
+<h4>Aerobic System</h4>
+<p style="text-align:left;">Used for activities lasting longer than about 2 minutes.</p>
+<h3>Monitoring Conditioning</h3>
+<p style="text-align:left;">Heart Rate<br>
+Rate of Perceived Exertion (RPE)<br>
+VO₂ Max<br>
+Recovery Time<br>
+Training Load<br></p>
+  </section>
+  <section id="power" class="about-intro">
+    <h2>Power</h2>
+    <div class="training-image">
+    <img src="power.jpg" alt="Power Training">
+    </div>
+    <h3>Definition</h3>
+<p style="text-align:left;">Power Training focuses on producing maximum force in the shortest possible time. It combines both strength and speed.</p>
+<h3>Formula</h3
+<p style="text-align:left;">Power = Force × Velocity</p>
+<h3>Objectives</h3>
+<p style="text-align:left;">Increase explosive strength<br>
+Improve acceleration<br>
+Enhance jumping ability<br>
+Improve sprinting speed<br>
+Develop athletic explosiveness<br></p>
+<h3>Benefits</h3>
+<p style="text-align:left;">Faster movements<br>
+Greater athletic performance<br>
+Improved coordination<br>
+Better reaction speed<br>
+Increased muscle recruitment</p>
+    <h3>Types of Power</h3>
+
+<div class="scroll-wrapper">
+<div class="scroll-cards">
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80">
+
+<h4>Lower Body Power</h4>
+
+<ul>
+<li>Vertical Jump</li>
+<li>Broad Jump</li>
+<li>Sprint Starts</li>
+<li>Bounding</li>
+<li>Box Jumps</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=700&q=80">
+
+<h4>Upper Body Power</h4>
+
+<ul>
+<li>Medicine Ball Throws</li>
+<li>Push Press</li>
+<li>Plyometric Push-ups</li>
+<li>Explosive Bench Press</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80">
+
+<h4>Full Body Power</h4>
+
+<ul>
+<li>Power Clean</li>
+<li>Clean & Jerk</li>
+<li>Snatch</li>
+<li>Thrusters</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+<h3>Plyometric Exercises</h3>
+
+<div class="scroll-wrapper">
+<div class="scroll-cards">
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80">
+
+<h4>Jump Training</h4>
+
+<ul>
+<li>Box Jumps</li>
+<li>Jump Squats</li>
+<li>Tuck Jumps</li>
+<li>Skater Jumps</li>
+<li>Bounding</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80">
+
+<h4>Upper Body</h4>
+
+<ul>
+<li>Clap Push-ups</li>
+<li>Medicine Ball Slams</li>
+<li>Chest Pass</li>
+<li>Overhead Throws</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+<h3>Olympic Lifts</h3>
+
+<div class="scroll-wrapper">
+<div class="scroll-cards">
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=700&q=80">
+
+<h4>Power Clean</h4>
+
+<ul>
+<li>Explosive Pull</li>
+<li>Hip Drive</li>
+<li>Fast Catch</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?auto=format&fit=crop&w=700&q=80">
+
+<h4>Clean & Jerk</h4>
+
+<ul>
+<li>Clean</li>
+<li>Front Rack</li>
+<li>Power Jerk</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80" alt="Olympic Weightlifting">
+
+<h4>Snatch</h4>
+
+<ul>
+<li>Wide Grip</li>
+<li>Explosive Pull</li>
+<li>Overhead Lockout</li>
+</ul>
+
+</div>
+
+<div class="exercise-card">
+
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80">
+
+<h4>Hang Clean</h4>
+
+<ul>
+<li>Hang Position</li>
+<li>Power Extension</li>
+<li>Quick Catch</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+<h3>Equipment</h3>
+
+<div class="values-grid">
+
+<div class="value-card">
+<i class="fas fa-weight-hanging"></i>
+<h3>Barbells</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-baseball-ball"></i>
+<h3>Medicine Balls</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-cube"></i>
+<h3>Plyometric Boxes</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-dumbbell"></i>
+<h3>Kettlebells</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-water"></i>
+<h3>Battle Ropes</h3>
+</div>
+
+<div class="value-card">
+<i class="fas fa-truck-ramp-box"></i>
+<h3>Sleds</h3>
+</div>
+
+</div>
+<h3>Programming Principles</h3>
+<p style="text-align:left;">High intensity<br>
+Low repetitions<br>
+Full recovery<br>
+Excellent technique<br>
+Fast movement execution</p>
+  </section>
+<!-- ================= MISSION & VISION ================= -->
+<section class="mv-section">
+
+<div class="mv-container">
+
+<div class="mv-card">
+<h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+<p>
+To empower individuals to transform their bodies and minds through structured, science-based training that delivers sustainable results and long-term health.
+</p>
+</div>
+
+<div class="mv-card">
+<h2><i class="fas fa-eye"></i> Our Vision</h2>
+<p>
+To become a leading personal fitness brand known for discipline, transformation, and excellence in athletic and lifestyle coaching.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TRAINING PHILOSOPHY ================= -->
+<section class="philosophy">
+
+<h2>Training Philosophy</h2>
+
+<p>
+At FitPals, we believe fitness is not about quick fixes — it's about consistency, discipline, and smart training. Every program is designed with three core principles:
+</p>
+
+<div class="philosophy-grid">
+
+<div class="philo-card">
+<i class="fas fa-brain"></i>
+<h3>Smart Training</h3>
+<p>Every workout is scientifically structured to maximize results and reduce injury risk.</p>
+</div>
+
+<div class="philo-card">
+<i class="fas fa-dumbbell"></i>
+<h3>Progressive Growth</h3>
+<p>We focus on gradual improvement in strength, endurance, and mobility over time.</p>
+</div>
+
+<div class="philo-card">
+<i class="fas fa-heart"></i>
+<h3>Sustainable Fitness</h3>
+<p>We build habits that last — not extreme routines that burn out quickly.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CORE VALUES ================= -->
+<section class="values">
+
+<h2>Core Values</h2>
+
+<div class="values-grid">
+
+<div class="value-card">
+<i class="fas fa-check-circle"></i>
+<h3>Discipline</h3>
+<p>Consistency beats motivation — every session matters.</p>
+</div>
+
+<div class="value-card">
+<i class="fas fa-fire"></i>
+<h3>Commitment</h3>
+<p>We stay committed to your transformation journey.</p>
+</div>
+
+<div class="value-card">
+<i class="fas fa-users"></i>
+<h3>Community</h3>
+<p>We grow stronger together through group and personal training.</p>
+</div>
+
+<div class="value-card">
+<i class="fas fa-chart-line"></i>
+<h3>Progress</h3>
+<p>Every milestone is tracked and celebrated.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TRAINER EXTENDED ================= -->
+<section class="trainer-extended">
+
+<div class="trainer-box">
+
+<div class="trainer-text">
+
+<h2>Meet Philip</h2>
+
+<p>
+FitPals founder Philip Lucas is a fitness enthusiast and a qualified and passionate personal trainer focused on virtual and in-person training to help clients achieve their fitness goals for physical health, functional fitness, longevity and aesthetics.
+</p>
+
+<p>
+His approach blends modern exercise science with practical coaching methods, ensuring every client gets personalized attention and measurable progress.
+</p>
+
+</div>
+
+<div class="trainer-stats">
+
+<div class="t-stat">
+<h3>5+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="t-stat">
+<h3>250+</h3>
+<p>Clients Trained</p>
+</div>
+
+<div class="t-stat">
+<h3>100%</h3>
+<p>Dedication</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= WHY CHOOSE FITPALS ================= -->
+<section class="why">
+
+<h2>Why Choose FitPals?</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+<i class="fas fa-star"></i>
+<h3>Personalized Training</h3>
+<p>Every program is tailored to your body type, goals, and lifestyle.</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-shield-alt"></i>
+<h3>Safe & Effective</h3>
+<p>We focus on proper form and injury-free progress.</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-stopwatch"></i>
+<h3>Fast Progress</h3>
+<p>Structured plans that maximize results in minimal time.</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-medal"></i>
+<h3>Proven Results</h3>
+<p>Hundreds of clients have transformed through FitPals coaching.</p>
+</div>
+
+</div>
+
+</section>
+<!-- ================= FAQ ================= -->
+<section class="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-container">
+
+<div class="faq-item">
+<button class="faq-question">What makes FitPals different?</button>
+<div class="faq-answer">
+We focus on structured, science-based training that is fully personalized to each client.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">Do I need gym experience?</button>
+<div class="faq-answer">
+No. We work with beginners, intermediate, and advanced clients.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">How do I book a session?</button>
+<div class="faq-answer">
+Simply click the "Book Session" button and choose your preferred time.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">Where are sessions held?</button>
+<div class="faq-answer">
+Sessions are conducted in selected gyms and outdoor locations depending on your program.
+</div>
+</div>
+
+</div>
+
+</section>
+<!-- ================= CTA ================= -->
+<section class="cta-about">
+
+<h2>Ready to Transform Your Body?</h2>
+
+<p>
+Take the first step today and start your fitness journey with FitPals. Your transformation starts now.
+</p>
+
+<a href="booking.html">Book Your Session</a>
+
+</section>
+<!-- ================= FOOTER ================= -->
+<footer>
+
+<div class="footer-logo">Fit<span>Pals</span></div>
+
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="merchandise.html">Merchandise</a>
+<a href="booking.html">Booking</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div class="socials">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
+<a href="#"<i class="fab fa-youtube"></i></a>
+</div>
+
+<p>© 2026 FitPals™ | Built with passion by Eltone Lucas<div>
+All Rights Reserved</p>
+
+</footer>
+<script>
+// ================= SIDEBAR =================
+const sidebar = document.getElementById("sidebar");
+
+function openMenu(){
+    sidebar.style.right = "0";
+}
+
+function closeMenu(){
+    sidebar.style.right = "-320px";
+}
+
+document.querySelectorAll(".sidebar a").forEach(link=>{
+    link.addEventListener("click", closeMenu);
+});
+  // Close sidebar when clicking outside it
+document.addEventListener("click", function(event){
+
+    const sidebar = document.getElementById("sidebar");
+    const menu = document.querySelector(".menu");
+
+    if(
+        sidebar.style.right === "0px" &&
+        !sidebar.contains(event.target) &&
+        !menu.contains(event.target)
+    ){
+        closeMenu();
+    }
+
+});
+
+// ================= FAQ ACCORDION =================
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item=>{
+item.querySelector(".faq-question").addEventListener("click",()=>{
+item.classList.toggle("active");
+});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Fitness Training Session | FitPals™</title>
+    <meta name="description" content="Book a personal fitness training session with FitPals™. Choose your training service and schedule your fitness coaching session.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://eltonelucas46-debug.github.io/FitPalsWebsite/booking.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Book a Fitness Training Session | FitPals™">
+    <meta property="og:description" content="Book your FitPals™ personal fitness training and coaching session.">
+    <meta property="og:url" content="https://eltonelucas46-debug.github.io/FitPalsWebsite/booking.html">
+    <meta property="og:site_name" content="FitPals™">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Book a Fitness Training Session | FitPals™">
+    <meta name="twitter:description" content="Schedule your FitPals™ fitness training session.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Book a Fitness Training Session",
+      "description": "Book a personal fitness training session with FitPals™.",
+      "url": "https://eltonelucas46-debug.github.io/FitPalsWebsite/booking.html"
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+        body { background:#0a0a0a; color:white; overflow-x: hidden; }
+        header {
+            text-align:center;
+            padding:25px 20px;
+            background:#fff;
+            border-bottom:2px solid #2196f3;
+        }
+        header .logo-img {
+            width:180px;
+            height:auto;
+            display:block;
+            margin:0 auto 15px;
+            border:0;
+            border-radius:16px;
+            object-fit:contain;
+            overflow:hidden;
+            -webkit-mask-image:-webkit-radial-gradient(white,black);
+        }
+        header h1 {
+            color:#2196f3;
+            font-size:32px;
+        }
+        .container { max-width: 500px; width: 90%; margin: 30px auto; padding: 20px; background:#111; border-radius:15px; border:1px solid #222; }
+        form { display:flex; flex-direction:column; gap:15px; }
+        input, select, textarea { width: 100%; padding: 15px; border-radius: 10px; border:none; outline:none; background:#1a1a1a; color:white; }
+        .phone-group { display: flex; gap: 5px; }
+        .phone-group select { width: 110px; flex-shrink: 0; }
+        .phone-group input { flex-grow: 1; }
+        button { padding: 15px; background:#2196f3; color:black; font-weight:bold; border:none; border-radius:50px; cursor:pointer; transition:.3s; }
+        button:disabled { background: #444; color: #aaa; cursor: not-allowed; }
+        .popup { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:none; justify-content:center; align-items:center; z-index:9999; padding: 20px; }
+        .popup-content { background:#111; padding:30px; border-radius:15px; text-align:center; border:2px solid #2196f3; max-width: 90%; width: 400px; }
+        @media (max-width: 480px) { .phone-group { flex-direction: column; } .phone-group select { width: 100%; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="new-logo.jpg" class="logo-img" alt="FitPals™">
+    <h1>Book Your Session</h1>
+</header>
+
+<div class="container">
+    <form id="bookingForm">
+        <input id="name" type="text" placeholder="Full Name" required>
+        <input id="email" type="email" placeholder="Email Address" required>
+        
+        <div class="phone-group">
+            <select id="countryCode" required>
+                <option value="+254">+254 (KE)</option>
+                <option value="+1">+1 (US/CA)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+91">+91 (IN)</option>
+                <option value="+27">+27 (ZA)</option>
+                <option value="+61">+61 (AU)</option>
+                <option value="+49">+49 (DE)</option>
+                <option value="+971">+971 (AE)</option>
+            </select>
+            <input id="phone" type="tel" placeholder="Phone Number" required>
+        </div>
+
+        <select id="service" required>
+            <option value="">~Select Training Program~</option>
+            <option>Dynamic Mobility Training</option>
+            <option>Strength / Resistance Training</option>
+            <option>Conditioning</option>
+            <option>Power Training</option>
+        </select>
+
+        <select id="sessionType" required>
+            <option value="">~Session Type~</option>
+            <option>Virtual Session</option>
+            <option>In-Person Session</option>
+        </select>
+
+        <select id="timeSlot" required>
+            <option value="">~Preferred Time Slot~</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+        </select>
+      <p style="margin-left:20px;font-size:14px;">Input Date</p>
+        <input id="date" type="date" required>
+
+        <textarea id="message" rows="3" placeholder="Optional message..."></textarea>
+        <button type="submit" id="submitBtn">Book Now</button>
+    </form>
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>✅ Booking Successful</h2>
+        <p>Your session has been recorded. We will be in touch!</p>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script>
+    // Set min date to today
+    const dateInput = document.getElementById('date');
+    dateInput.min = new Date().toISOString().split("T")[0];
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCFvIIEugiK4QcEoX6BjpNCDMR_Dr2_ZbU",
+        authDomain: "fitpals-booking-system-9e029.firebaseapp.com",
+        projectId: "fitpals-booking-system-9e029",
+        storageBucket: "fitpals-booking-system-9e029.firebasestorage.app",
+        messagingSenderId: "970079191247",
+        appId: "1:970079191247:web:18aeeb996421e05ae5b7ba"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    document.getElementById("bookingForm").addEventListener("submit", async function(e){
+        e.preventDefault();
+        const btn = document.getElementById("submitBtn");
+        btn.disabled = true;
+        btn.innerText = "Submitting...";
+
+        let booking = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("countryCode").value + " " + document.getElementById("phone").value,
+            service: document.getElementById("service").value,
+            sessionType: document.getElementById("sessionType").value,
+            timeSlot: document.getElementById("timeSlot").value,
+            date: document.getElementById("date").value,
+            message: document.getElementById("message").value,
+            createdAt: new Date().toISOString()
+        };
+
+        try {
+            await db.collection("bookings").add(booking);
+            document.getElementById("popup").style.display = "flex";
+            setTimeout(() => { window.location.href = "index.html"; }, 3000);
+        } catch (error) {
+            alert("Error: " + error.message);
+            btn.disabled = false;
+            btn.innerText = "Book Now";
+        }
+    });
+</script>
+</body>
+</html>
+

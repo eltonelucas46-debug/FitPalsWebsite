@@ -1,0 +1,1215 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FitPals™ | Account</title>
+
+<meta name="description"
+content="Login or create your FitPals account.">
+
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://eltonelucas46-debug.github.io/FitPalsWebsite/account.html">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+  /* ACTIVATION POPUP */
+
+.activation-popup{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:5000;
+}
+
+.activation-box{
+background:#111;
+border:1px solid #2196f3;
+padding:35px;
+border-radius:20px;
+width:90%;
+max-width:420px;
+text-align:center;
+box-shadow:0 0 30px rgba(33,150,243,.4);
+}
+
+.activation-box h2{
+color:#2196f3;
+margin-bottom:15px;
+}
+
+.activation-box p{
+color:#ddd;
+line-height:1.7;
+font-size:15px;
+}
+
+.activation-box button{
+margin-top:25px;
+padding:12px 30px;
+border:none;
+border-radius:30px;
+background:#2196f3;
+font-weight:700;
+cursor:pointer;
+}
+
+/*=========================
+GLOBAL
+=========================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b0b0b;
+color:#fff;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#2196f3;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
+}
+
+/*=========================
+HEADER
+=========================*/
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#fff;
+backdrop-filter:blur(15px);
+z-index:1000;
+}
+
+.logo{
+display:flex;
+align-items:center;
+font-size:32px;
+font-weight:800;
+color:#2196f3;
+}
+
+.logo span{
+color:#fff;
+}
+
+.logo img{
+width:180px;
+height:auto;
+display:block;
+border:0;
+border-radius:16px;
+object-fit:contain;
+overflow:hidden;
+-webkit-mask-image:-webkit-radial-gradient(white,black);
+}
+
+nav{
+display:flex;
+gap:28px;
+}
+
+nav a{
+color:#fff;
+transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+color:#2196f3;
+}
+
+.book-btn{
+padding:12px 24px;
+background:#2196f3;
+color:#000;
+font-weight:700;
+border-radius:40px;
+transition:.3s;
+}
+
+.book-btn:hover{
+transform:translateY(-3px);
+}
+
+.menu{
+display:none;
+font-size:30px;
+cursor:pointer;
+}
+
+/*=========================
+SIDEBAR
+=========================*/
+
+.sidebar{
+position:fixed;
+top:0;
+right:-320px;
+width:300px;
+height:100%;
+background:#111;
+padding:35px;
+transition:.4s;
+z-index:2000;
+}
+
+.sidebar h2{
+color:#2196f3;
+margin-bottom:25px;
+}
+
+.sidebar a{
+display:block;
+margin:18px 0;
+}
+
+.close{
+font-size:30px;
+cursor:pointer;
+float:right;
+margin-bottom:25px;
+}
+
+/*=========================
+HERO
+=========================*/
+
+.hero{
+height:48vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.72);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+width:90%;
+max-width:760px;
+}
+
+.hero-content h1{
+font-size:58px;
+color:#2196f3;
+margin-bottom:15px;
+}
+
+.hero-content p{
+color:#ddd;
+font-size:18px;
+line-height:1.8;
+}
+
+/*=========================
+ACCOUNT
+=========================*/
+
+.account{
+padding:90px 7%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.account-box{
+width:100%;
+max-width:520px;
+background:#111;
+border:1px solid #222;
+border-radius:22px;
+padding:40px;
+box-shadow:0 0 30px rgba(33,150,243,.18);
+}
+
+.tabs{
+display:flex;
+border:1px solid #2196f3;
+border-radius:50px;
+overflow:hidden;
+margin-bottom:35px;
+}
+
+.tabs button{
+flex:1;
+padding:15px;
+background:#111;
+border:none;
+cursor:pointer;
+font-size:16px;
+font-weight:600;
+color:#fff;
+transition:.3s;
+}
+
+.tabs button.active{
+background:#2196f3;
+color:#000;
+}
+
+.form{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.form h2{
+text-align:center;
+color:#2196f3;
+margin-bottom:10px;
+}
+
+.form input{
+width:100%;
+padding:15px;
+border-radius:12px;
+border:1px solid #333;
+background:#1b1b1b;
+color:#fff;
+font-size:15px;
+}
+
+.form input:focus{
+outline:none;
+border-color:#2196f3;
+}
+
+.password-box{
+position:relative;
+}
+
+.password-box i{
+position:absolute;
+right:18px;
+top:50%;
+transform:translateY(-50%);
+cursor:pointer;
+color:#aaa;
+}
+
+.extra{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:14px;
+}
+
+.extra a{
+color:#2196f3;
+}
+
+.form button{
+padding:16px;
+border:none;
+border-radius:40px;
+background:#2196f3;
+color:#000;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.form button:hover{
+transform:translateY(-3px);
+box-shadow:0 0 20px rgba(33,150,243,.5);
+}
+
+#registerForm{
+display:none;
+}
+
+.message{
+margin-top:15px;
+text-align:center;
+font-size:14px;
+font-weight:500;
+min-height:20px;
+}
+
+.success{
+color:#4caf50;
+}
+
+.error{
+color:#ff4d4d;
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:900px){
+
+nav,
+.book-btn{
+display:none;
+}
+
+.menu{
+display:block;
+}
+
+.hero-content h1{
+font-size:42px;
+}
+
+.hero{
+height:42vh;
+}
+
+.account-box{
+padding:25px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<img src="new-logo.jpg" class="logo-img" alt="FitPals™">
+
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About FitPals</a>
+
+<a href="merchandise.html">Merchandise</a>
+
+<a href="booking.html">Booking</a>
+
+<a href="feeds.html">Feeds</a>
+
+<a href="account.html" class="active">Account</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+<a href="booking.html" class="book-btn">
+
+Book Session
+
+</a>
+
+<div class="menu" onclick="openMenu()">
+
+<i class="fas fa-bars"></i>
+
+</div>
+
+</header>
+
+<div class="sidebar" id="sidebar">
+
+<div class="close" onclick="closeMenu()">
+
+<i class="fas fa-times"></i>
+
+</div>
+
+<h2>FitPals™</h2>
+
+<a href="index.html">Home</a>
+<a href="about.html">About FitPals</a>
+<a href="merchandise.html">Merchandise</a>
+<a href="booking.html">Booking</a>
+<a href="feeds.html">Feeds</a>
+<a href="account.html">Account</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>FitPals Account</h1>
+
+<p>
+
+Create your FitPals account or sign in to manage bookings, track your progress, and connect with the FitPals community.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="account">
+
+<div class="account-box">
+
+<div class="tabs">
+
+<button
+id="loginTab"
+class="active">
+
+Login
+
+</button>
+
+<button
+id="registerTab">
+
+Register
+
+</button>
+
+</div>
+<!-- ================= LOGIN FORM ================= -->
+
+<form class="form" id="loginForm">
+
+<h2>Welcome Back</h2>
+
+<input
+type="email"
+id="loginEmail"
+placeholder="Email Address"
+required>
+
+<div class="password-box">
+
+<input
+type="password"
+id="loginPassword"
+placeholder="Password"
+required>
+
+<i
+class="fas fa-eye"
+id="loginTogglePassword"></i>
+
+</div>
+
+<div class="extra">
+
+<label>
+
+<input
+type="checkbox"
+id="rememberMe">
+
+Remember Me
+
+</label>
+
+<a
+href="#"
+id="forgotPassword">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+<button
+type="submit">
+
+<i class="fas fa-right-to-bracket"></i>
+
+Login
+
+</button>
+
+<div
+class="message"
+id="loginMessage"></div>
+
+<hr
+style="margin:20px 0;border:1px solid #222;">
+
+<button
+type="button"
+id="googleLogin"
+style="background:#fff;color:#111;">
+
+<i class="fab fa-google"></i>
+
+Continue with Google
+
+</button>
+
+</form>
+
+<!-- ================= REGISTER FORM ================= -->
+
+<form
+class="form"
+id="registerForm">
+
+<h2>Create Account</h2>
+
+<input
+type="text"
+id="registerName"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+id="registerEmail"
+placeholder="Email Address"
+required>
+
+<div class="password-box">
+
+<input
+type="password"
+id="registerPassword"
+placeholder="Create Password"
+required>
+
+<i
+class="fas fa-eye"
+id="registerTogglePassword"></i>
+
+</div>
+
+<div class="password-box">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm Password"
+required>
+
+<i
+class="fas fa-eye"
+id="confirmTogglePassword"></i>
+
+</div>
+
+<label
+style="font-size:14px;display:flex;gap:10px;align-items:flex-start;">
+
+<input
+type="checkbox"
+id="terms"
+required>
+
+<span>
+
+I agree to the
+<b>FitPals Terms & Conditions</b>
+and
+<b>Privacy Policy</b>.
+
+</span>
+
+</label>
+
+<button
+type="submit">
+
+<i class="fas fa-user-plus"></i>
+
+Create Account
+
+</button>
+
+<div
+class="message"
+id="registerMessage"></div>
+
+<hr
+style="margin:20px 0;border:1px solid #222;">
+
+<button
+type="button"
+id="googleRegister"
+style="background:#fff;color:#111;">
+
+<i class="fab fa-google"></i>
+
+Sign Up with Google
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- Firebase SDKs -->
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+import {
+getAuth,
+GoogleAuthProvider,
+signInWithPopup,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+sendEmailVerification,
+sendPasswordResetEmail,
+setPersistence,
+browserLocalPersistence,
+browserSessionPersistence,
+onAuthStateChanged
+}
+from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+import {
+getFirestore,
+doc,
+setDoc,
+serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+// ================= FIREBASE CONFIG =================
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyCFvIIEugiK4QcEoX6BjpNCDMR_Dr2_ZbU",
+
+authDomain: "fitpals-booking-system-9e029.firebaseapp.com",
+
+projectId: "fitpals-booking-system-9e029",
+
+storageBucket: "fitpals-booking-system-9e029.firebasestorage.app",
+
+messagingSenderId: "970079191247",
+
+appId: "1:970079191247:web:18aeeb996421e05ae5b7ba",
+
+measurementId: "G-T5C3JM5237"
+
+};
+
+// ================= INITIALIZE FIREBASE =================
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+const provider = new GoogleAuthProvider();
+
+onAuthStateChanged(auth, (user) => {
+
+if (!user) return;
+
+const loginTime = localStorage.getItem("fitpalsLoginTime");
+
+const TWO_WEEKS = 14 * 24 * 60 * 60 * 1000;
+
+if (!loginTime) {
+
+localStorage.setItem("fitpalsLoginTime", Date.now());
+
+return;
+
+}
+
+if ((Date.now() - Number(loginTime)) > TWO_WEEKS) {
+
+auth.signOut();
+
+localStorage.removeItem("fitpalsLoginTime");
+
+return;
+
+}
+
+// Only redirect if we're currently on the account page
+if (window.location.pathname.includes("account.html")) {
+window.location.href = "dashboard.html";
+}
+
+});
+
+// ================= SIDEBAR =================
+
+window.openMenu = function(){
+
+document.getElementById("sidebar").style.right="0";
+
+}
+
+window.closeMenu = function(){
+
+document.getElementById("sidebar").style.right="-320px";
+
+}
+
+// ================= LOGIN / REGISTER TABS =================
+
+const loginTab=document.getElementById("loginTab");
+
+const registerTab=document.getElementById("registerTab");
+
+const loginForm=document.getElementById("loginForm");
+
+const registerForm=document.getElementById("registerForm");
+
+loginTab.onclick=function(){
+
+loginTab.classList.add("active");
+
+registerTab.classList.remove("active");
+
+loginForm.style.display="flex";
+
+registerForm.style.display="none";
+
+}
+
+registerTab.onclick=function(){
+
+registerTab.classList.add("active");
+
+loginTab.classList.remove("active");
+
+registerForm.style.display="flex";
+
+loginForm.style.display="none";
+
+}
+
+// ================= SHOW/HIDE PASSWORD =================
+
+function togglePassword(inputId,iconId){
+
+const input=document.getElementById(inputId);
+
+const icon=document.getElementById(iconId);
+
+icon.onclick=function(){
+
+if(input.type==="password"){
+
+input.type="text";
+
+icon.classList.replace("fa-eye","fa-eye-slash");
+
+}else{
+
+input.type="password";
+
+icon.classList.replace("fa-eye-slash","fa-eye");
+
+}
+
+}
+
+}
+
+togglePassword("loginPassword","loginTogglePassword");
+
+togglePassword("registerPassword","registerTogglePassword");
+
+togglePassword("confirmPassword","confirmTogglePassword");
+
+// ================= MESSAGE FUNCTION =================
+
+function showMessage(id, message, type, duration = 8000){
+
+const box = document.getElementById(id);
+
+box.textContent = message;
+
+box.className = "message " + type;
+
+box.style.opacity = "1";
+
+setTimeout(()=>{
+
+box.style.opacity = "0";
+
+setTimeout(()=>{
+
+box.textContent = "";
+
+box.className = "message";
+
+box.style.opacity = "1";
+
+},300);
+
+},duration);
+
+}
+
+// ================= REGISTER =================
+
+registerForm.addEventListener("submit",async(e)=>{
+
+e.preventDefault();
+
+const name=document.getElementById("registerName").value.trim();
+
+const email=document.getElementById("registerEmail").value.trim();
+
+const password=document.getElementById("registerPassword").value;
+
+const confirm=document.getElementById("confirmPassword").value;
+
+if(password!==confirm){
+
+showMessage("registerMessage","Passwords do not match.","error");
+
+return;
+
+}
+
+try{
+
+const userCredential=await createUserWithEmailAndPassword(auth,email,password);
+
+await sendEmailVerification(userCredential.user);
+
+await setDoc(doc(db,"users",userCredential.user.uid),{
+
+name:name,
+
+email:email,
+
+createdAt:serverTimestamp()
+
+});
+
+showMessage(
+"registerMessage",
+"🎉 Account created successfully! A verification email has been sent. Verify your email, then return here to sign in.",
+"success",
+8000
+);
+
+registerForm.reset();
+
+}
+catch(error){
+
+let message = "";
+
+switch(error.code){
+case "auth/email-already-in-use":
+message = "An account with this email already exists.";
+break;
+case "auth/invalid-email":
+message = "Please enter a valid email address.";
+break;
+case "auth/weak-password":
+message = "Your password should contain at least 6 characters.";
+break;
+default:
+message = error.message;
+}
+
+showMessage("registerMessage",message,"error");
+
+}
+
+});
+
+// ================= LOGIN =================
+
+loginForm.addEventListener("submit",async(e)=>{
+
+e.preventDefault();
+
+const email=document.getElementById("loginEmail").value.trim();
+
+const password=document.getElementById("loginPassword").value;
+
+const remember=document.getElementById("rememberMe").checked;
+
+try{
+
+await setPersistence(
+auth,
+remember
+? browserLocalPersistence
+: browserSessionPersistence
+);
+
+const userCredential=await signInWithEmailAndPassword(auth,email,password);
+
+localStorage.setItem(
+"fitpalsLoginTime",
+Date.now()
+);
+
+if(!userCredential.user.emailVerified){
+
+showMessage("loginMessage","Please verify your email before logging in.","error");
+
+return;
+
+}
+
+showMessage(
+"loginMessage",
+"Welcome back! Redirecting you to your FitPals dashboard...",
+"success",
+2000
+);
+
+setTimeout(()=>{
+
+window.location.href="dashboard.html";
+
+},1500);
+
+}
+catch(error){
+
+let message = "";
+
+switch(error.code){
+case "auth/invalid-email":
+message = "Please enter a valid email address.";
+break;
+case "auth/user-not-found":
+case "auth/wrong-password":
+case "auth/invalid-credential":
+message = "Incorrect email or password.";
+break;
+case "auth/too-many-requests":
+message = "Too many attempts. Please wait a few minutes and try again.";
+break;
+default:
+message = error.message;
+}
+
+showMessage("loginMessage",message,"error");
+
+}
+
+});
+
+// ================= GOOGLE LOGIN =================
+
+async function googleLogin(){
+
+try{
+
+const result=await signInWithPopup(auth,provider);
+
+await setDoc(doc(db,"users",result.user.uid),{
+
+name:result.user.displayName,
+
+email:result.user.email,
+
+photo:result.user.photoURL,
+
+createdAt:serverTimestamp()
+
+},{merge:true});
+
+window.location.href="dashboard.html";
+
+}
+catch(error){
+
+let message = "";
+
+switch(error.code){
+
+case "auth/popup-closed-by-user":
+message = "The Google sign-in popup was closed before completion.";
+break;
+
+case "auth/account-exists-with-different-credential":
+message = "An account already exists with the same email address but different sign-in credentials.";
+break;
+
+default:
+message = "Something went wrong with Google Sign-In. Please try again.";
+
+}
+
+showMessage("loginMessage",message,"error",6000);
+
+}
+
+}
+
+document.getElementById("googleLogin").onclick=googleLogin;
+
+document.getElementById("googleRegister").onclick=googleLogin;
+
+// ================= FORGOT PASSWORD =================
+
+document.getElementById("forgotPassword").onclick=async function(e){
+
+e.preventDefault();
+
+const email = document.getElementById("loginEmail").value.trim();
+
+if(!email){
+
+showMessage(
+"loginMessage",
+"Please enter your email address first, then click Forgot Password.",
+"error",
+6000
+);
+
+return;
+
+}
+
+try{
+
+await sendPasswordResetEmail(auth,email);
+
+showMessage(
+"loginMessage",
+"Password reset email sent successfully. Please check your Inbox and Spam folder.",
+"success",
+8000
+);
+
+}
+catch(error){
+
+let message = "";
+
+switch(error.code){
+
+case "auth/invalid-email":
+message = "Please enter a valid email address.";
+break;
+
+case "auth/user-not-found":
+message = "No FitPals account was found with that email.";
+break;
+
+default:
+message = "Could not send password reset email. Please try again later.";
+
+}
+
+showMessage("loginMessage",message,"error",6000);
+
+}
+
+};
+
+window.showActivationPopup = function(){
+
+document.getElementById("activationPopup").style.display="flex";
+
+}
+
+
+window.closeActivationPopup=function(){
+
+document.getElementById("activationPopup").style.display="none";
+
+}
+
+</script>
+  <div class="activation-popup" id="activationPopup">
+
+<div class="activation-box">
+
+<h2>
+<i class="fas fa-envelope-circle-check"></i>
+Check Your Email
+</h2>
+
+<p>
+Your FitPals account has been created successfully.
+<br><br>
+An activation link has been sent to your email address.
+<br><br>
+Please open your email and click the verification link to activate your account before logging in.
+</p>
+
+<button onclick="closeActivationPopup()">
+Got It.
+</button>
+
+</div>
+
+  </div>
+
+</body>
+
+</html>
+

@@ -1,0 +1,1501 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FitPals™ | Personal Fitness Training in Kenya</title>
+
+<meta name="description" content="FitPals™ provides professional personal fitness training, strength and resistance training, conditioning, mobility, and performance coaching in Kenya.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eltonelucas46-debug.github.io/FitPalsWebsite/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="FitPals™ | Personal Fitness Training in Kenya">
+<meta property="og:description" content="Professional personal fitness training, strength, conditioning, mobility and performance coaching with FitPals™.">
+<meta property="og:url" content="https://eltonelucas46-debug.github.io/FitPalsWebsite/">
+<meta property="og:site_name" content="FitPals™">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FitPals™ | Personal Fitness Training in Kenya">
+<meta name="twitter:description" content="Professional personal fitness training, strength, conditioning, mobility and performance coaching.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "FitPals™",
+  "description": "Professional personal fitness training, strength, conditioning, mobility and performance coaching.",
+  "url": "https://eltonelucas46-debug.github.io/FitPalsWebsite/",
+  "brand": {
+    "@type": "Brand",
+    "name": "FitPals™"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+  .logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo-img{
+    width:180px;
+    height:auto;
+    display:block;
+    border:0;
+    border-radius:16px;
+    object-fit:contain;
+    overflow:hidden;
+    -webkit-mask-image:-webkit-radial-gradient(white,black);
+}
+  .hero-content{
+    position:relative;
+    z-index:5;
+    max-width:850px;
+    padding:20px;
+    animation:fadeUp 1.5s;
+}
+
+/* NEW: fitness background behind welcome text */
+.hero-content::before{
+    content:"";
+    position:absolute;
+    top:-40px;
+    left:-40px;
+    right:-40px;
+    bottom:-40px;
+    background:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    border-radius:25px;
+    opacity:0.25;
+    z-index:-1;
+}
+   .trainer{ padding:100px 8%; display:flex; flex-wrap:wrap; align-items:center; gap:60px; background:#111; } .trainer-image{ flex:1; min-width:300px; } .trainer-image img{ width:100%; border-radius:25px; } .trainer-content{ flex:1; min-width:300px; } .trainer-content h2{ font-size:42px; color:#2196f3; margin-bottom:15px; } .trainer-content h3{ font-size:30px; margin-bottom:20px; } .trainer-content p{ line-height:2; color:#ddd; margin-bottom:30px; } .trainer-btn{ display:inline-block; padding:15px 30px; background:#2196f3; color:#000; text-decoration:none; border-radius:50px; font-weight:bold; } /* TESTIMONIALS */ .testimonials{ padding:100px 8%; background:#0a0a0a; text-align:center; } .testimonials h2{ font-size:42px; color:#2196f3; margin-bottom:50px; } .testimonial-container{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; } .testimonial{ background:#111; padding:35px; border-radius:20px; } .testimonial i{ font-size:40px; color:#2196f3; margin-bottom:20px; } .testimonial p{ line-height:1.9; color:#ddd; margin-bottom:20px; } /* GALLERY */ .gallery{ padding:100px 8%; background:#111; } .gallery h2{ text-align:center; font-size:42px; color:#2196f3; margin-bottom:50px; } .gallery-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; } .gallery-grid img{ width:100%; height:260px; object-fit:cover; border-radius:18px; transition:.4s; } .gallery-grid img:hover{ transform:scale(1.05); } /* CTA */ .cta{ padding:100px 8%; text-align:center; background:#0a0a0a; } .cta h2{ font-size:48px; color:#2196f3; margin-bottom:25px; } .cta p{ max-width:800px; margin:auto; line-height:2; color:#ddd; margin-bottom:35px; } .cta a{ display:inline-block; padding:18px 40px; background:#2196f3; color:#000; text-decoration:none; font-weight:bold; border-radius:50px; } /* FOOTER */ footer{ background:#000; padding:50px 8%; text-align:center; } .footer-logo{ font-size:34px; font-weight:800; color:#2196f3; margin-bottom:25px; } .footer-logo span{ color:#fff; } .footer-links{ margin-bottom:25px; } .footer-links a{ color:#ddd; text-decoration:none; margin:0 12px; } .footer-links a:hover{ color:#2196f3; } .socials{ margin-bottom:25px; } .socials a{ color:#fff; font-size:24px; margin:0 12px; transition:.3s; } .socials a:hover{ color:#2196f3; } 
+
+.intro{
+
+padding:100px 8%;
+background:#111;
+text-align:center;
+
+}
+
+.intro h2{
+
+font-size:42px;
+color:#2196f3;
+margin-bottom:25px;
+
+}
+
+.intro p{
+
+max-width:900px;
+margin:auto;
+font-size:18px;
+line-height:2;
+color:#ddd;
+
+}
+
+.intro span{
+
+color:#2196f3;
+font-weight:700;
+
+}
+
+/* PROGRAMS */
+
+.programs{
+
+padding:100px 8%;
+background:#0a0a0a;
+
+}
+
+.programs h2{
+
+text-align:center;
+font-size:42px;
+color:#2196f3;
+margin-bottom:60px;
+
+}
+
+.program-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+.card{
+
+background:#111;
+padding:35px;
+border-radius:20px;
+transition:.4s;
+border:1px solid #222;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+border-color:#2196f3;
+box-shadow:0 0 30px rgba(33,150,243,.25);
+
+}
+
+.card i{
+
+font-size:45px;
+color:#2196f3;
+margin-bottom:20px;
+
+}
+
+.card h3{
+
+font-size:24px;
+margin-bottom:15px;
+
+}
+
+.card p{
+
+color:#ccc;
+line-height:1.9;
+margin-bottom:25px;
+
+}
+
+.card a{
+
+display:inline-block;
+padding:12px 24px;
+border-radius:50px;
+text-decoration:none;
+background:#2196f3;
+color:#000;
+font-weight:600;
+
+}
+
+/* STATS */
+
+.stats{
+
+padding:80px 8%;
+background:#111;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:30px;
+text-align:center;
+
+}
+
+.stat{
+
+padding:30px;
+
+}
+
+.stat h2{
+
+font-size:48px;
+color:#2196f3;
+
+}
+
+.stat p{
+
+margin-top:10px;
+color:#ddd;
+font-size:18px;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0a0a0a;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#2196f3;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
+}
+
+/* Header */
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+
+padding:18px 7%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(15px);
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:34px;
+font-weight:800;
+color:#2196f3;
+
+}
+
+.logo span{
+
+color:white;
+
+}
+
+nav{
+
+display:flex;
+gap:30px;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+font-size:16px;
+transition:.4s;
+
+}
+
+nav a:hover{
+
+color:#2196f3;
+
+}
+
+.menu{
+display:none;
+font-size:30px;
+cursor:pointer;
+color:#2196f3;
+background:transparent;
+border:0;
+padding:5px;
+line-height:1;
+}
+
+.book-btn{
+
+padding:12px 25px;
+
+background:#2196f3;
+
+color:black;
+
+font-weight:bold;
+
+border-radius:50px;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+.book-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+position:fixed;
+
+right:-320px;
+
+top:0;
+
+width:300px;
+
+height:100%;
+
+background:#111;
+
+padding:40px;
+
+transition:.4s;
+
+z-index:2000;
+
+}
+
+.sidebar h2{
+
+color:#2196f3;
+margin-bottom:30px;
+
+}
+
+.sidebar a{
+
+display:block;
+
+margin:20px 0;
+
+text-decoration:none;
+
+color:white;
+
+font-size:18px;
+
+}
+
+.close{
+
+font-size:30px;
+cursor:pointer;
+float:right;
+margin-bottom:20px;
+
+}
+
+/* HERO */
+
+.hero{
+
+position:relative;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+overflow:hidden;
+
+}
+
+/* Background Images */
+
+.slide{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background-size:cover;
+background-position:center;
+
+opacity:0;
+
+transition:opacity 2s ease;
+
+}
+
+.slide.active{
+
+opacity:1;
+
+}
+
+.overlay{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.65);
+
+}
+
+/* Hero Content */
+
+.hero-content{
+
+position:relative;
+
+z-index:5;
+
+max-width:850px;
+
+padding:20px;
+
+animation:fadeUp 1.5s;
+
+}
+
+.hero-content small{
+
+letter-spacing:3px;
+
+color:#2196f3;
+
+font-size:18px;
+
+}
+
+.hero-content h1{
+
+font-size:70px;
+
+line-height:1.1;
+
+margin:20px 0;
+
+}
+
+.hero-content span{
+
+color:#2196f3;
+
+}
+
+.hero-content p{
+
+font-size:19px;
+
+line-height:1.8;
+
+color:#ddd;
+
+margin-bottom:40px;
+
+}
+
+/* Buttons */
+
+.buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:16px 34px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.4s;
+
+}
+
+.primary{
+
+background:#2196f3;
+
+color:black;
+
+}
+
+.secondary{
+
+border:2px solid #2196f3;
+
+color:#2196f3;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* Floating Booking */
+
+.booking{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:#2196f3;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:28px;
+
+color:black;
+
+box-shadow:0 0 30px #2196f3;
+
+z-index:1000;
+
+animation:pulse 2s infinite;
+
+}
+
+/* Scroll Icon */
+
+.scroll{
+
+position:absolute;
+
+bottom:30px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:30px;
+
+color:#2196f3;
+
+animation:bounce 2s infinite;
+
+z-index:5;
+
+}
+
+/* Animations */
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.1);
+
+box-shadow:0 0 50px #2196f3;
+
+}
+
+}
+
+@keyframes bounce{
+
+50%{
+
+transform:translate(-50%,12px);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+nav{
+
+display:none;
+
+}
+
+.book-btn{
+
+display:none;
+
+}
+
+.menu{
+
+display:block;
+
+}
+
+.hero-content h1{
+
+font-size:45px;
+
+}
+
+.hero-content p{
+
+font-size:16px;
+
+}
+
+}
+
+</style>
+
+<link rel="manifest" href="/FitPalsWebsite/manifest.json">
+<meta name="theme-color" content="#2196f3">
+<style>
+.get-app-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid #2196f3;
+    background: #2196f3;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.get-app-btn:hover {
+    background: #1976d2;
+    box-shadow: 0 0 20px #2196f3;
+}
+
+.get-app-btn:active {
+    transform: scale(.96);
+}
+
+@media (max-width: 850px) {
+    .get-app-btn {
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+    <img src="new-logo.jpg" class="logo-img" alt="FitPals™">
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About FitPals</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="booking.html">Booking</a>
+    <a href="feeds.html">Feeds</a>
+    <a href="account.html">Account</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="admin.html" style="color:#2196f3;font-weight:bold;">
+        <i class="fas fa-user-shield"></i> Admin Dashboard
+    </a>
+</nav>
+
+
+<a href="booking.html" class="book-btn">
+
+Book Session
+
+</a>
+<button id="getAppBtn" class="get-app-btn" type="button">
+&#128241; Get App
+</button>
+
+<div class="menu" onclick="openMenu()">
+
+<i class="fas fa-bars"></i>
+
+</div>
+
+</header>
+
+<div class="sidebar" id="sidebar">
+
+<div class="close" onclick="closeMenu()">
+
+<i class="fas fa-times"></i>
+
+</div>
+
+<h2>FitPals</h2>
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About FitPals</a>
+
+<a href="merchandise.html">Merchandise</a>
+
+<a href="booking.html">Booking</a>
+
+<a href="contact.html">Contact</a>
+  <a href="feeds.html">Feeds</a>
+<a href="account.html">Account</a>
+  <a href="admin.html" style="color:#2196f3;font-weight:bold;">
+<i class="fas fa-user-shield"></i> Admin Dashboard
+  </a>
+
+</div>
+
+<section class="hero">
+
+<div class="slide active"
+style="background-image:url('images/hero1.jpg');"></div>
+
+<div class="slide"
+style="background-image:url('images/hero2.jpg');"></div>
+
+<div class="slide"
+style="background-image:url('images/hero3.jpg');"></div>
+
+<div class="slide"
+style="background-image:url('images/hero4.jpg');"></div>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<small>WELCOME TO FITPALS</small>
+
+<h1>
+
+Train Smarter.<br>
+
+<span>Move Better.</span><br>
+
+Become Stronger.
+
+</h1>
+
+<p>
+
+Professional Personal Training by Philip.
+
+Helping individuals and athletes unlock peak fitness through elite coaching, personalized programming, sustainable training and measurable results.
+
+</p>
+
+<div class="buttons">
+
+    <a href="booking.html" class="btn primary">
+        Book a Session
+    </a>
+
+    <a
+        href="https://github.com/eltonelucas46-debug/FitPalsWebsite/releases/latest/download/FitPals-Animated.apk"
+        class="btn download-btn"
+        download>
+        <i class="fas fa-download"></i>
+        Download Android APK
+    </a>
+
+</div>
+
+</div>
+
+<div class="scroll">
+
+<i class="fas fa-angle-down"></i>
+
+</div>
+
+</section>
+
+<a href="booking.html" class="booking">
+
+<i class="fas fa-calendar-check"></i>
+
+</a>
+<!-- ================= HOME INTRO ================= -->
+
+<section class="intro">
+
+<div class="container">
+
+<h2>Personal Training Designed Around You</h2>
+
+<p>
+
+At <span>FitPals</span>, fitness is more than exercise—it's a complete lifestyle. Every programme is tailored to your goals, whether you're improving mobility, building strength, increasing endurance, or developing elite athletic power. My coaching focuses on proper technique, consistency, motivation and long-term results.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROGRAMS ================= -->
+
+<section class="programs">
+
+<h2>Featured Fitness Programmes</h2>
+
+<div class="program-grid">
+
+<div class="card">
+
+<i class="fas fa-person-walking"></i>
+
+<h3>Dynamic Mobility Training</h3>
+
+<p>
+
+Light yoga, mat Pilates and flexibility routines designed to improve movement, posture, longevity and aesthetics. We also organise outdoor group mobility sessions at selected locations.
+
+</p>
+
+<a href="about.html#dynamic-mobility">Learn More</a>
+
+</div>
+
+
+<div class="card">
+
+<i class="fas fa-dumbbell"></i>
+
+<h3>Strength / Resistance Training</h3>
+
+<p>
+
+Free weights, resistance bands and machine-based workouts that develop functional strength and muscle while improving overall fitness at premium Nairobi gyms.
+
+</p>
+
+<a href="about.html#s/r">Learn More</a>
+
+</div>
+
+
+<div class="card">
+
+<i class="fas fa-heart-pulse"></i>
+
+<h3>Conditioning</h3>
+
+<p>
+
+HIIT, steady-state cardio, spinning and sprint interval training that improve endurance, cardiovascular health and overall physical performance.
+
+</p>
+
+<a href="about.html#cond">Learn More</a>
+
+</div>
+
+
+<div class="card">
+
+<i class="fas fa-bolt"></i>
+
+<h3>Power Training</h3>
+
+<p>
+
+Explosive bodyweight and weighted exercises that teach athletes to generate maximum force quickly for speed, agility and elite sporting performance.
+
+</p>
+
+<a href="about.html#power">Learn More</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+<div class="stat">
+
+<h2>10+</h2>
+
+<p>Clients Trained</p>
+
+</div>
+
+<div class="stat">
+
+<h2>100+</h2>
+
+<p>Training Sessions</p>
+
+</div>
+
+<div class="stat">
+
+<h2>98%</h2>
+
+<p>Client Satisfaction</p>
+
+</div>
+
+<div class="stat">
+<h2>24 Hrs</h2>
+
+<p>Online Support</p>
+</div>
+
+
+</section>
+<!-- ================= TRAINER ================= -->
+
+<section class="trainer">
+
+<div class="trainer-image">
+
+<img src="philip.jpg" alt="Philip - Personal Trainer">
+
+</div>
+
+<div class="trainer-content">
+
+<h2>Meet Your Trainer</h2>
+
+<h3>Philip</h3>
+
+<p>
+
+I'm passionate about helping people transform their lives through intelligent fitness coaching. My approach combines science-based training, accountability and motivation to ensure every client achieves sustainable results.
+
+Whether your goal is improving mobility, increasing strength, enhancing athletic performance or living a healthier lifestyle, I will guide you every step of the journey.
+
+</p>
+
+<a href="about.html" class="trainer-btn">
+
+Learn More About Me
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="testimonials">
+
+<h2>What Clients Say</h2>
+
+<div class="testimonial-container">
+
+<div class="testimonial">
+
+<i class="fas fa-quote-left"></i>
+
+<p>
+
+"Training with Philip completely changed my fitness journey. Every session is motivating and professionally planned."
+
+</p>
+
+<h4>— Client Review</h4>
+
+</div>
+
+<div class="testimonial">
+
+<i class="fas fa-quote-left"></i>
+
+<p>
+
+"I became stronger, healthier and much more confident after joining FitPals."
+
+</p>
+
+<h4>— Client Review</h4>
+
+</div>
+
+<div class="testimonial">
+
+<i class="fas fa-quote-left"></i>
+
+<p>
+
+"The outdoor mobility sessions are fun, energetic and suitable for everyone."
+
+</p>
+
+<h4>— Client Review</h4>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GALLERY PREVIEW ================= -->
+
+<section class="gallery">
+
+<h2>Training Gallery</h2>
+
+<div class="gallery-grid">
+
+<img src="gallery1.jpg">
+
+<img src="gallery2.jpg">
+
+<img src="gallery3.jpg">
+
+<img src="gallery4.jpg">
+
+<img src="gallery5.jpg">
+
+<img src="gallery6.jpg">
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>
+
+Ready To Transform Your Fitness?
+
+</h2>
+
+<p>
+
+Take the first step today.
+
+Book your personal training session and begin building a healthier, stronger and more confident version of yourself.
+
+</p>
+
+<a href="booking.html">
+
+Book Your First Session
+
+</a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-logo">
+
+Fit<span>Pals™</span>
+
+</div>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="merchandise.html">Merchandise</a>
+
+<a href="booking.html">Booking</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="socials">
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+
+<a href="#"><i class="fab fa-tiktok"></i></a>
+
+<a href="#"><i class="fab fa-youtube"></i></a>
+</div>
+
+<p>
+
+© 2026 FitPals™ | Designed by Eltone Lucas<br>
+  All Rights Reserved
+
+</p>
+
+</footer>
+  <script>
+
+/* ===========================
+   MOBILE SIDEBAR
+=========================== */
+
+const sidebar = document.getElementById("sidebar");
+
+function openMenu(){
+    sidebar.style.right = "0";
+}
+
+function closeMenu(){
+    sidebar.style.right = "-320px";
+}
+
+document.querySelectorAll(".sidebar a").forEach(link=>{
+    link.addEventListener("click",closeMenu);
+});
+    // Close sidebar when clicking outside it
+document.addEventListener("click", function(event){
+
+    const sidebar = document.getElementById("sidebar");
+    const menu = document.querySelector(".menu");
+
+    if(
+        sidebar.style.right === "0px" &&
+        !sidebar.contains(event.target) &&
+        !menu.contains(event.target)
+    ){
+        closeMenu();
+    }
+
+});
+
+
+/* ===========================
+   HERO BACKGROUND SLIDESHOW
+=========================== */
+
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+function changeSlide(){
+
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide++;
+
+    if(currentSlide >= slides.length){
+        currentSlide = 0;
+    }
+
+    slides[currentSlide].classList.add("active");
+
+}
+
+setInterval(changeSlide,10000);
+
+
+/* ===========================
+   REVEAL ANIMATION
+=========================== */
+
+const revealElements = document.querySelectorAll(
+".intro,.programs,.stats,.trainer,.gallery,.cta,.testimonials"
+);
+
+function reveal(){
+
+    revealElements.forEach(el=>{
+
+        const windowHeight = window.innerHeight;
+
+        const revealTop = el.getBoundingClientRect().top;
+
+        if(revealTop < windowHeight-120){
+
+            el.style.opacity="1";
+
+            el.style.transform="translateY(0)";
+
+        }
+
+    });
+
+}
+
+revealElements.forEach(el=>{
+
+    el.style.opacity="0";
+
+    el.style.transform="translateY(60px)";
+
+    el.style.transition=".8s";
+
+});
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+
+
+/* ===========================
+   ANIMATED STATS
+=========================== */
+
+const counters = document.querySelectorAll(".stat h2");
+
+let counted = false;
+
+function startCounter(){
+
+    if(counted) return;
+
+    const stats = document.querySelector(".stats");
+
+    const trigger = stats.getBoundingClientRect().top;
+
+    if(trigger < window.innerHeight-100){
+
+        counted = true;
+
+        counters.forEach(counter=>{
+
+            const text = counter.innerText;
+
+            const target = parseInt(text.replace(/\D/g,""));
+
+            let count = 0;
+
+            const increment = target/100;
+
+            const suffix = text.replace(/[0-9]/g,'');
+
+            const timer = setInterval(()=>{
+
+                count += increment;
+
+                if(count>=target){
+
+                    counter.innerText = target + suffix;
+
+                    clearInterval(timer);
+
+                }else{
+
+                    counter.innerText =
+                    Math.floor(count)+suffix;
+
+                }
+
+            },20);
+
+        });
+
+    }
+
+}
+
+window.addEventListener("scroll",startCounter);
+
+startCounter();
+
+
+/* ===========================
+   TESTIMONIAL SLIDER
+=========================== */
+
+const testimonialContainer =
+document.querySelector(".testimonial-container");
+
+let testimonialIndex = 0;
+
+function rotateTestimonials(){
+
+    if(window.innerWidth>900) return;
+
+    const testimonials =
+    document.querySelectorAll(".testimonial");
+
+    testimonials.forEach(card=>{
+
+        card.style.display="none";
+
+    });
+
+    testimonials[testimonialIndex].style.display="block";
+
+    testimonialIndex++;
+
+    if(testimonialIndex>=testimonials.length){
+
+        testimonialIndex=0;
+
+    }
+
+}
+
+rotateTestimonials();
+
+setInterval(rotateTestimonials,5000);
+
+
+/* ===========================
+   NAVBAR BACKGROUND
+=========================== */
+
+window.addEventListener("scroll",()=>{
+
+    const header = document.querySelector("header");
+
+    if(window.scrollY>80){
+
+        header.style.background="rgba(0,0,0,.92)";
+
+    }else{
+
+        header.style.background="rgba(0,0,0,.75)";
+
+    }
+
+});
+
+
+/* ===========================
+   BUTTON HOVER EFFECT
+=========================== */
+
+const buttons =
+document.querySelectorAll(".btn,.trainer-btn,.book-btn");
+
+buttons.forEach(btn=>{
+
+    btn.addEventListener("mouseenter",()=>{
+
+        btn.style.boxShadow="0 0 25px #2196f3";
+
+    });
+
+    btn.addEventListener("mouseleave",()=>{
+
+        btn.style.boxShadow="none";
+
+    });
+
+});
+
+
+/* ===========================
+   GALLERY ZOOM
+=========================== */
+
+const gallery =
+document.querySelectorAll(".gallery img");
+
+gallery.forEach(img=>{
+
+    img.addEventListener("mouseenter",()=>{
+
+        img.style.transform="scale(1.08)";
+
+    });
+
+    img.addEventListener("mouseleave",()=>{
+
+        img.style.transform="scale(1)";
+
+    });
+
+});
+</script>
+<script>
+/* FITPALS SERVICE WORKER */
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register(
+            "/FitPalsWebsite/service-worker.js"
+        ).then(() => {
+            console.log("FitPals service worker registered.");
+        }).catch(error => {
+            console.error(
+                "FitPals service worker registration failed:",
+                error
+            );
+        });
+    });
+}
+</script>
+<script src="/FitPalsWebsite/install.js"></script>
+</body>
+  </html>
+
+

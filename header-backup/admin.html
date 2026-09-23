@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPals™ Admin</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://eltonelucas46-debug.github.io/FitPalsWebsite/admin.html">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .notify-btn { position:fixed; top:50px; right:20px; width:55px; height:55px; background:#2196f3; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:24px; cursor:pointer; box-shadow:0 5px 15px rgba(0,0,0,.4); z-index:999; display:none; }
+        .notify-btn:hover { transform:scale(1.08); transition:.2s; }
+        .notify-count { position:absolute; top:-6px; right:-6px; background:red; color:white; width:26px; height:26px; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:13px; font-weight:bold; }
+        body { margin:0; font-family:'Poppins',sans-serif; background:#0a0a0a; color:white; }
+        .auth { height:100vh; display:flex; justify-content:center; align-items:center; }
+        .box { background:#fff; padding:30px; border-radius:15px; border:1px solid #2196f3; width:320px; text-align:center; }
+        input { width:100%; padding:12px; margin:10px 0; background:#1a1a1a; border:none; border-radius:8px; color:white; }
+        button { width:100%; padding:12px; background:#2196f3; border:none; border-radius:8px; font-weight:bold; cursor:pointer; }
+        .dashboard { display:none; }
+        header {
+            padding:20px;
+            text-align:center;
+            background:#fff;
+            border-bottom:2px solid #2196f3;
+            position:sticky;
+            top:0;
+        }
+
+        header .logo-img {
+            width:180px;
+            height:auto;
+            display:block;
+            margin:0 auto 15px;
+            border:0;
+            border-radius:16px;
+            object-fit:contain;
+            overflow:hidden;
+            -webkit-mask-image:-webkit-radial-gradient(white,black);
+        }
+        h1 { color:#2196f3; margin:0; }
+        .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:15px; padding:20px; }
+        .card { background:#111; padding:20px; border-radius:12px; text-align:center; border:1px solid #222; }
+        .card h3 { color:#2196f3; }
+        .loading { position:fixed; top:0; left:0; width:100%; height:100%; background:#000; display:none; justify-content:center; align-items:center; flex-direction:column; z-index:999; }
+        .spinner { width:55px; height:55px; border:6px solid #333; border-top:6px solid #2196f3; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:20px; }
+        @keyframes spin { 100% { transform:rotate(360deg); } }
+        
+        .booking-card { margin:15px; padding:18px; border-radius:12px; transition:.3s; }
+        .booking-card.unopened { background:#00b85c; color:white; }
+        .booking-card.opened { background:white; color:black; }
+        
+        .booking-header { display:flex; justify-content:space-between; align-items:center; }
+        .booking-details { display:none; margin-top:15px; line-height:1.9; }
+        .booking-card.show-details .booking-details { display:block; }
+        .card-btn { padding:8px 14px; border:none; border-radius:6px; cursor:pointer; margin:5px; font-weight:bold; }
+        .confirm { background:#2196f3; }
+        .delete { background:red; color:white; }
+        .close { background:#333; color:white; }
+        .refresh-btn { background: #333; color: #fff; margin-top: 10px; padding: 10px; border-radius: 8px; width: 150px; }
+    </style>
+</head>
+
+<body>
+
+<div class="loading" id="loading"><div class="spinner"></div><h3>Loading Dashboard...</h3></div>
+
+<div class="auth" id="auth">
+    <div class="box">
+        <h2 style="color:#2196f3;">FitPals Login</h2>
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="msg" style="color:red;"></p>
+    </div>
+</div>
+
+<div class="dashboard" id="dashboard">
+    <header>
+        <img src="new-logo.jpg" class="logo-img" alt="FitPals™">
+        <h1>FitPals Dashboard</h1>
+        <button class="refresh-btn" onclick="load()">Manual Refresh</button>
+    </header>
+    <div class="stats">
+        <div class="card"><h3>Total</h3><p id="total">0</p></div>
+        <div class="card"><h3>Pending</h3><p id="pending">0</p></div>
+        <div class="card"><h3>Completed</h3><p id="completed">0</p></div>
+      <div class="card"><h3>Sales Orders</h3><p id="salesOrders">0</p></div>
+<div class="card"><h3>Revenue</h3><p id="revenue">0</p></div>
+<div class="card"><h3>Items Sold</h3><p id="itemsSold">0</p></div>
+    </div>
+    <div id="cards"></div>
+</div>
+
+<div class="notify-btn" onclick="scrollToNewest()">🔔<div class="notify-count" id="notifyCount">0</div></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyCFvIIEugiK4QcEoX6BjpNCDMR_Dr2_ZbU",
+  authDomain: "fitpals-booking-system-9e029.firebaseapp.com",
+  projectId: "fitpals-booking-system-9e029",
+  storageBucket: "fitpals-booking-system-9e029.firebasestorage.app",
+  messagingSenderId: "970079191247",
+  appId: "1:970079191247:web:18aeeb996421e05ae5b7ba"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+function login() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    document.getElementById("loading").style.display = "flex";
+    auth.signInWithEmailAndPassword(email, password).then(() => {
+        document.getElementById("auth").style.display = "none";
+        setTimeout(() => {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+            document.querySelector(".notify-btn").style.display = "flex";
+            listenBookings();
+          loadSales();
+        }, 1500);
+    }).catch(err => {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("msg").innerText = err.message;
+    });
+}
+
+async function load() {
+    let snap = await db.collection("bookings").orderBy("createdAt", "desc").get();
+    let cards = document.getElementById("cards");
+    cards.innerHTML = "";
+    
+    let total = 0, pending = 0, completed = 0;
+    
+    snap.forEach(doc => {
+        let b = doc.data();
+        total++;
+        if (b.status === 'confirmed') completed++;
+        else pending++;
+
+        let cardClass = b.opened ? 'opened' : 'unopened';
+        cards.innerHTML += `
+        <div class="booking-card ${cardClass}" id="${doc.id}">
+            <div class="booking-header">
+                <div><b>Name:</b> ${b.name}<br><b>Email:</b> ${b.email}</div>
+                <button class="card-btn confirm" onclick="openCard('${doc.id}')">Open ▼</button>
+            </div>
+            <div class="booking-details">
+                <p><b>Phone:</b> ${b.phone}</p>
+                <p><b>Service:</b> ${b.service}</p>
+                <p><b>Session Type:</b> ${b.sessionType || 'N/A'}</p>
+                <p><b>Time Slot:</b> ${b.timeSlot || 'N/A'}</p>
+                <p><b>Duration:</b> ${b.duration}</p>
+                <p><b>Date:</b> ${b.date}</p>
+                <p><b>Message:</b> ${b.message}</p>
+                <button class="card-btn confirm" onclick="updateStatus('${doc.id}','confirmed')">✔ Confirm</button>
+                <button class="card-btn delete" onclick="deleteBooking('${doc.id}')">🗑 Delete</button>
+                <button class="card-btn close" onclick="closeCard('${doc.id}')">✖ Close</button>
+            </div>
+        </div>`;
+    });
+    
+    document.getElementById("total").innerText = total;
+    document.getElementById("pending").innerText = pending;
+    document.getElementById("completed").innerText = completed;
+}
+  async function loadSales() {
+
+    let snap = await db.collection("orders").get();
+
+    let orders = 0;
+    let revenue = 0;
+    let itemsSold = 0;
+
+    snap.forEach(doc => {
+
+        let o = doc.data();
+
+        orders++;
+
+        revenue += o.total || 0;
+
+        if (o.items) {
+            o.items.forEach(i => {
+                itemsSold += i.qty || 0;
+            });
+        }
+
+    });
+
+    document.getElementById("salesOrders").innerText = orders;
+    document.getElementById("revenue").innerText = "KES " + revenue;
+    document.getElementById("itemsSold").innerText = itemsSold;
+  }
+
+function openCard(id) {
+    document.getElementById(id).classList.add("show-details");
+    document.getElementById(id).classList.replace("unopened", "opened");
+    db.collection("bookings").doc(id).update({ opened: true });
+}
+
+function closeCard(id) { document.getElementById(id).classList.remove("show-details"); }
+function deleteBooking(id) { if (confirm("Delete this booking?")) { db.collection("bookings").doc(id).delete(); } }
+function updateStatus(id, status) { db.collection("bookings").doc(id).update({ status: status }); }
+function listenBookings() { db.collection("bookings").onSnapshot(() => load()); }
+function scrollToNewest() { document.querySelector(".booking-card").scrollIntoView({ behavior: "smooth" }); }
+</script>
+</body>
+</html>
+
