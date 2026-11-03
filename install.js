@@ -147,7 +147,7 @@
     );
 
     if (downloadAPK) {
-      window.location.href = "/FitPalsWebsite/FitPals-Animated.apk";
+      window.location.href = "https://github.com/eltonelucas46-debug/FitPalsWebsite/releases/latest/download/FitPals-Animated.apk";
     }
   });
 
@@ -166,6 +166,16 @@
 
     console.log("FitPals was installed.");
   });
+
+
+  // GET APP BUTTON: direct Android APK download
+  const getAppBtn = document.getElementById("getAppBtn");
+
+  if (getAppBtn) {
+    getAppBtn.addEventListener("click", function () {
+      window.location.href = "https://github.com/eltonelucas46-debug/FitPalsWebsite/releases/latest/download/FitPals-Animated.apk";
+    });
+  }
 
   // Don't show the banner again after the user cancelled it
   if (sessionStorage.getItem("fitpalsInstallDismissed") === "true") {
