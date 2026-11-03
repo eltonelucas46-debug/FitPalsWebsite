@@ -120,35 +120,10 @@
     showInstallBanner();
   });
 
-  // Install button
-  installButton.addEventListener("click", async function () {
-
-    // Native PWA installation
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-
-      try {
-        await deferredPrompt.userChoice;
-      } catch (error) {
-        console.log("FitPals installation prompt closed.");
-      }
-
-      deferredPrompt = null;
-      hideInstallBanner();
-
-      return;
-    }
-
-    // APK fallback
-    const downloadAPK = confirm(
-      "Install FitPals on Android?\n\n" +
-      "Your browser will download the FitPals Android app (APK). " +
-      "Android will then ask you to confirm the installation."
-    );
-
-    if (downloadAPK) {
-      window.location.href = "https://github.com/eltonelucas46-debug/FitPalsWebsite/releases/latest/download/FitPals-Animated.apk";
-    }
+  // Install button: download the Android APK directly
+  installButton.addEventListener("click", function () {
+    window.location.href =
+      "https://github.com/eltonelucas46-debug/FitPalsWebsite/releases/latest/download/FitPals-Animated.apk";
   });
 
   // Cancel button
